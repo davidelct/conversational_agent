@@ -1,12 +1,12 @@
 Which metro station is near to the museum?
 How can I go to the museum?
-Is there any parking where I can leave my [VEHICLE]?
-How can I get to the museum from [START]?
-How can I get to the museum [MODE TRANSPORT]?
+Is there any parking where I can leave my VEHICLE?
+How can I get to the museum from START?
+How can I get to the museum MODE_TRANSPORT?
 There is access for people with special needs? 
 Can you send me directions towards the Caixa museum?
 How do I arrive at the Caixa museum?
 What is the fastest route to the Caixa museum?
 Which way of transport should I take?
-How much time does it cost to go to the Caixa museum from [START]?
+How much time does it cost to go to the Caixa museum from START?
 Which route do you recommend to take to the Caixa museum?

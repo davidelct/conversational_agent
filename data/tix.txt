@@ -1,0 +1,92 @@
+Tickets
+Buy tickets
+Purchase tickets
+A ticket
+One ticket
+[NUMBER] tickets
+A ticket please
+One ticket please
+[NUMBER] tickets please
+Can I get a ticket please
+Can I get one ticket please
+Can I get [NUMBER] tickets please
+Could I get a ticket
+Could I get one ticket
+Could I get [NUMBER] tickets
+Could I please get a ticket
+Could I please get one ticket
+Could I please get [NUMBER] tickets
+I'd like a ticket
+I'd like one ticket
+I'd like [NUMBER] tickets
+I'd like a ticket please
+I'd like one ticket please
+I'd like [NUMBER] tickets please
+I'd like to get a ticket
+I'd like to get one ticket
+I'd like to get [NUMBER] tickets
+I'd like to get a ticket please
+I'd like to get one ticket please 
+I'd like to get [NUMBER] tickets please
+A ticket [DATE1]
+One ticket [DATE1]
+[NUMBER] tickets [DATE1]
+A ticket [DATE1] please
+One ticket [DATE1] please
+[NUMBER] tickets [DATE1] please
+A ticket [DATE1]
+One ticket [DATE1]
+[NUMBER] tickets [DATE1]
+A ticket [DATE1] please
+One ticket [DATE1] please
+[NUMBER] tickets [DATE1] please
+A ticket [DATE1]
+One ticket [DATE1]
+[NUMBER] tickets [DATE1]
+A ticket [DATE1] please
+One ticket [DATE1] please
+[NUMBER] tickets [DATE1] please
+I want to buy a ticket
+I want to buy one ticket
+I want to buy tickets
+I want to buy [NUMBER] tickets
+I want to buy a ticket [DATE1]
+I want to buy tickets [DATE1]
+I want to buy a ticket for the [EXHIBITION_NAME] exhibition
+I want to buy one ticket for the [EXHIBITION_NAME] exhibition
+I want to buy tickets for the [EXHIBITION_NAME] exhibition
+I want to buy [NUMBER] tickets for the [EXHIBITION_NAME] exhibition
+I want to buy a ticket for the exhibition about [EXHIBITION_TOPIC]
+I want to buy one ticket for the exhibition about [EXHIBITION_TOPIC]
+I want to buy tickets for the exhibition about [EXHIBITION_TOPIC]
+I want to buy [NUMBER] tickets for the exhibition about [EXHIBITION_TOPIC]
+I want to buy a ticket for the exhibition on [EXHIBITION_TOPIC]
+I want to buy one ticket for the exhibition on [EXHIBITION_TOPIC]
+I want to buy tickets for the exhibition on [EXHIBITION_TOPIC]
+I want to buy [NUMBER] tickets for the exhibition on [EXHIBITION_TOPIC]
+A ticket for the [EXHIBITION_NAME] exhibition
+One ticket for the [EXHIBITION_NAME] exhibition
+Tickets for the [EXHIBITION_NAME] exhibition
+[NUMBER] tickets for the [EXHIBITION_NAME] exhibition
+A ticket for the exhibition about [EXHIBITION_TOPIC]
+One ticket for the exhibition about [EXHIBITION_TOPIC]
+Tickets for the exhibition about [EXHIBITION_TOPIC]
+[NUMBER] tickets for the exhibition on [EXHIBITION_TOPIC]
+Are there any more tickets?
+Are there any more tickets for the [EXHIBITION_NAME] exhibition
+Are there any more tickets for the exhibition on [EXHIBITION_TOPIC]
+Are tickets available for the exhibition about [EXHIBITION_TOPIC]
+I want tickets for the museum
+I want to go [DATE2] are there tickets for that day
+I want to go to the museum are there any tickets this week?
+How much do [NUMBER] tickets for the museum cost?
+I want to buy tickets
+One ticket for the Caixa museum please
+[NUMBER] tickets for the Caixa museum please
+Are there still tickets available for the Caixa museum on Thursday
+I would like to buy tickets
+Can I buy a ticket for the Caixa museum
+I wish to buy Caixa museum tickets
+Can I purchase tickets for next week
+I would like to go to the [EXHIBITION_NAME] exhibition [DATE2]
+I need [NUMBER] tickets

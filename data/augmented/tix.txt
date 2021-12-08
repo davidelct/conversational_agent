@@ -1,0 +1,656 @@
+tickets
+buy tickets
+purchase tickets
+a ticket
+one ticket
+two tickets
+three tickets
+four tickets
+five tickets
+six tickets
+a ticket please
+one ticket please
+two tickets please
+three tickets please
+four tickets please
+five tickets please
+six tickets please
+can i get a ticket please
+can i get one ticket please
+can i get two tickets please
+can i get three tickets please
+can i get four tickets please
+can i get five tickets please
+can i get six tickets please
+could i get a ticket
+could i get one ticket
+could i get two tickets
+could i get three tickets
+could i get four tickets
+could i get five tickets
+could i get six tickets
+could i please get a ticket
+could i please get one ticket
+could i please get two tickets
+could i please get three tickets
+could i please get four tickets
+could i please get five tickets
+could i please get six tickets
+i'd like a ticket
+i'd like one ticket
+i'd like two tickets
+i'd like three tickets
+i'd like four tickets
+i'd like five tickets
+i'd like six tickets
+i'd like a ticket please
+i'd like one ticket please
+i'd like two tickets please
+i'd like three tickets please
+i'd like four tickets please
+i'd like five tickets please
+i'd like six tickets please
+i'd like to get a ticket
+i'd like to get one ticket
+i'd like to get two tickets
+i'd like to get three tickets
+i'd like to get four tickets
+i'd like to get five tickets
+i'd like to get six tickets
+i'd like to get a ticket please
+i'd like to get one ticket please
+i'd like to get two tickets please
+i'd like to get three tickets please
+i'd like to get four tickets please
+i'd like to get five tickets please
+i'd like to get six tickets please
+a ticket for 29 Nov
+a ticket for Sep 15
+a ticket for Apr 11
+a ticket for Apr 05
+a ticket for next week
+a ticket on Friday
+a ticket for next Saturday
+a ticket for next Friday
+one ticket for Mar 09
+one ticket for 10 Jun
+one ticket for May 07
+one ticket for 06 Feb
+one ticket on Thursday
+one ticket for next Friday
+one ticket for next Sunday
+one ticket for next weekend
+two tickets for 18 Dec
+two tickets for Jul 17
+two tickets for 16 Jun
+two tickets for Aug 06
+two tickets for next Thursday
+two tickets for this weekend
+two tickets for this Tuesday
+two tickets for today
+three tickets for 26 Feb
+three tickets for 22 Sep
+three tickets for 10 Nov
+three tickets for 14 May
+three tickets for next Sunday
+three tickets for next week
+three tickets for this Thursday
+three tickets for this weekend
+four tickets for 21 Apr
+four tickets for Sep 01
+four tickets for 26 Dec
+four tickets for Nov 04
+four tickets for next Wednesday
+four tickets for today
+four tickets on Tuesday
+four tickets for this weekend
+five tickets for Jun 04
+five tickets for May 15
+five tickets for 13 Aug
+five tickets for 24 Feb
+five tickets for next Wednesday
+five tickets for this Wednesday
+five tickets on Saturday
+five tickets for next Sunday
+six tickets for 21 Jul
+six tickets for Aug 09
+six tickets for Apr 17
+six tickets for 09 Aug
+six tickets for this week
+six tickets for next weekend
+six tickets for Monday
+six tickets for next Sunday
+a ticket for 09 Dec please
+a ticket for 30 Mar please
+a ticket for 01 Sep please
+a ticket for 04 Dec please
+a ticket for tomorrow please
+a ticket on Thursday please
+a ticket for next Monday please
+a ticket on Tuesday please
+one ticket for 13 Nov please
+one ticket for 26 Feb please
+one ticket for 18 Oct please
+one ticket for 21 Oct please
+one ticket on Friday please
+one ticket on Wednesday please
+one ticket for this Thursday please
+one ticket for next Monday please
+two tickets for 06 Jun please
+two tickets for 07 Oct please
+two tickets for Apr 25 please
+two tickets for Jun 07 please
+two tickets on Saturday please
+two tickets on Tuesday please
+two tickets on Sunday please
+two tickets for this Monday please
+three tickets for 08 Sep please
+three tickets for 15 Nov please
+three tickets for 30 Nov please
+three tickets for Mar 20 please
+three tickets for this Thursday please
+three tickets on Friday please
+three tickets for Monday please
+three tickets for next weekend please
+four tickets for Mar 22 please
+four tickets for 31 Oct please
+four tickets for Mar 16 please
+four tickets for 15 Feb please
+four tickets for tomorrow please
+four tickets for next Tuesday please
+four tickets for next weekend please
+four tickets for this Sunday please
+five tickets for Jul 16 please
+five tickets for Apr 22 please
+five tickets for 31 May please
+five tickets for Feb 27 please
+five tickets for next month please
+five tickets for this Thursday please
+five tickets for this Wednesday please
+five tickets for next Saturday please
+six tickets for 13 Sep please
+six tickets for 25 Oct please
+six tickets for 08 May please
+six tickets for Aug 09 please
+six tickets for Monday please
+six tickets on Wednesday please
+six tickets for today please
+six tickets for this Sunday please
+a ticket for 13 Apr
+a ticket for Feb 27
+a ticket for Jul 29
+a ticket for Apr 28
+a ticket for this month
+a ticket on Saturday
+one ticket for 20 Jun
+one ticket for 21 Sep
+one ticket for 21 May
+one ticket for Mar 28
+one ticket for this month
+one ticket for this Wednesday
+one ticket for next Saturday
+one ticket for tomorrow
+two tickets for 07 Apr
+two tickets for Jul 14
+two tickets for 28 Sep
+two tickets for 01 Apr
+two tickets for next Sunday
+two tickets on Saturday
+two tickets on Friday
+three tickets for 04 Mar
+three tickets for 17 May
+three tickets for 26 Mar
+three tickets for Dec 10
+three tickets for this Friday
+three tickets for next Tuesday
+three tickets for this Wednesday
+three tickets on Sunday
+four tickets for 16 Aug
+four tickets for Jun 03
+four tickets for Mar 02
+four tickets for 20 Mar
+four tickets for next Sunday
+four tickets on Friday
+four tickets for next Thursday
+five tickets for 03 Jan
+five tickets for Nov 25
+five tickets for 20 Feb
+five tickets for 20 May
+five tickets on Sunday
+five tickets for next Friday
+five tickets for tomorrow
+five tickets for this Friday
+six tickets for Nov 13
+six tickets for 10 Apr
+six tickets for 18 Oct
+six tickets for 05 Oct
+six tickets for next Friday
+six tickets on Friday
+six tickets on Sunday
+a ticket for Aug 01 please
+a ticket for 28 Jan please
+a ticket for Aug 11 please
+a ticket for Oct 31 please
+a ticket for this Tuesday please
+a ticket for this week please
+a ticket for next Thursday please
+one ticket for 09 Nov please
+one ticket for 07 Apr please
+one ticket for Aug 12 please
+one ticket for Oct 16 please
+one ticket for this month please
+one ticket for this week please
+one ticket for next Wednesday please
+one ticket on Tuesday please
+two tickets for Feb 22 please
+two tickets for Dec 25 please
+two tickets for Jul 07 please
+two tickets for 23 Jul please
+two tickets for next Thursday please
+two tickets for next month please
+two tickets for tomorrow please
+two tickets for this Wednesday please
+three tickets for Aug 02 please
+three tickets for Aug 31 please
+three tickets for 07 May please
+three tickets for Dec 29 please
+three tickets for today please
+three tickets on Thursday please
+four tickets for Apr 24 please
+four tickets for 22 Jun please
+four tickets for 22 Oct please
+four tickets on Saturday please
+four tickets for this weekend please
+four tickets for next Saturday please
+four tickets for next Sunday please
+five tickets for Jan 13 please
+five tickets for 15 Jul please
+five tickets for 21 Jun please
+five tickets for 07 Sep please
+five tickets on Wednesday please
+five tickets for this Monday please
+five tickets for tomorrow please
+six tickets for 22 Feb please
+six tickets for 24 Oct please
+six tickets for Mar 05 please
+six tickets for 25 Jan please
+six tickets for next Thursday please
+six tickets for this weekend please
+six tickets for tomorrow please
+a ticket for 18 Feb
+a ticket for Dec 24
+a ticket for 13 Feb
+a ticket for 22 May
+a ticket for next Tuesday
+a ticket for this week
+a ticket for next weekend
+one ticket for Jul 06
+one ticket for 13 Apr
+one ticket for 06 Jul
+one ticket for 17 Mar
+one ticket for next Tuesday
+one ticket for next Monday
+one ticket for next Thursday
+two tickets for Jun 26
+two tickets for Sep 05
+two tickets for 06 Sep
+two tickets for Sep 15
+two tickets for this Friday
+two tickets on Thursday
+two tickets for this Thursday
+three tickets for 29 Oct
+three tickets for Dec 08
+three tickets for Oct 24
+three tickets for Nov 12
+three tickets for next Monday
+three tickets on Saturday
+three tickets on Tuesday
+four tickets for Jun 16
+four tickets for 09 Sep
+four tickets for 23 Mar
+four tickets for Jul 04
+four tickets for this Sunday
+four tickets for this month
+four tickets for next Monday
+five tickets for 15 Jan
+five tickets for Aug 21
+five tickets for 24 Jul
+five tickets for Jul 31
+five tickets on Tuesday
+five tickets for this weekend
+five tickets for next weekend
+six tickets for 09 Apr
+six tickets for Mar 10
+six tickets for Mar 06
+six tickets for Jan 17
+six tickets for this weekend
+six tickets on Thursday
+a ticket for Dec 20 please
+a ticket for Mar 22 please
+a ticket for 23 Nov please
+a ticket for 27 Feb please
+a ticket for next Saturday please
+a ticket for this Friday please
+one ticket for May 14 please
+one ticket for Nov 22 please
+one ticket for 06 Dec please
+one ticket for 10 Nov please
+one ticket on Saturday please
+one ticket for next month please
+one ticket on Thursday please
+two tickets for 08 Jun please
+two tickets for 09 Oct please
+two tickets for 07 Sep please
+two tickets for Nov 04 please
+two tickets for Monday please
+two tickets for this Saturday please
+three tickets for 15 Dec please
+three tickets for Feb 12 please
+three tickets for 15 May please
+three tickets for Oct 26 please
+three tickets for next Wednesday please
+three tickets for next Tuesday please
+three tickets for next Sunday please
+four tickets for 15 Aug please
+four tickets for 20 Feb please
+four tickets for Jun 19 please
+four tickets for 20 Oct please
+four tickets on Thursday please
+four tickets on Wednesday please
+four tickets on Sunday please
+five tickets for 08 Apr please
+five tickets for Jul 14 please
+five tickets for Jun 07 please
+five tickets for Nov 07 please
+six tickets for 02 May please
+six tickets for Apr 06 please
+six tickets for May 26 please
+six tickets for May 05 please
+six tickets for next Saturday please
+six tickets for this Thursday please
+six tickets for this month please
+i want to buy a ticket
+i want to buy one ticket
+i want to buy tickets
+i want to buy two tickets
+i want to buy three tickets
+i want to buy four tickets
+i want to buy five tickets
+i want to buy six tickets
+i want to buy a ticket for Aug 24
+i want to buy a ticket for Nov 22
+i want to buy a ticket for Aug 30
+i want to buy a ticket for Mar 25
+i want to buy a ticket for this Tuesday
+i want to buy a ticket for next Monday
+i want to buy a ticket for this Monday
+i want to buy a ticket for this Sunday
+i want to buy tickets for Oct 12
+i want to buy tickets for Sep 13
+i want to buy tickets for Apr 11
+i want to buy tickets for Jul 01
+i want to buy tickets on Tuesday
+i want to buy tickets on Sunday
+i want to buy tickets for next Sunday
+i want to buy tickets for next Monday
+i want to buy a ticket for the universe room exhibition
+i want to buy a ticket for the flooded forest exhibition
+i want to buy a ticket for the antarctic base exhibition
+i want to buy a ticket for the geological wall exhibition
+i want to buy a ticket for the sustainable building exhibition
+i want to buy one ticket for the universe room exhibition
+i want to buy one ticket for the flooded forest exhibition
+i want to buy one ticket for the antarctic base exhibition
+i want to buy one ticket for the geological wall exhibition
+i want to buy one ticket for the sustainable building exhibition
+i want to buy tickets for the universe room exhibition
+i want to buy tickets for the flooded forest exhibition
+i want to buy tickets for the antarctic base exhibition
+i want to buy tickets for the geological wall exhibition
+i want to buy tickets for the sustainable building exhibition
+i want to buy two tickets for the universe room exhibition
+i want to buy two tickets for the flooded forest exhibition
+i want to buy two tickets for the antarctic base exhibition
+i want to buy two tickets for the geological wall exhibition
+i want to buy two tickets for the sustainable building exhibition
+i want to buy three tickets for the universe room exhibition
+i want to buy three tickets for the flooded forest exhibition
+i want to buy three tickets for the antarctic base exhibition
+i want to buy three tickets for the geological wall exhibition
+i want to buy three tickets for the sustainable building exhibition
+i want to buy four tickets for the universe room exhibition
+i want to buy four tickets for the flooded forest exhibition
+i want to buy four tickets for the antarctic base exhibition
+i want to buy four tickets for the geological wall exhibition
+i want to buy four tickets for the sustainable building exhibition
+i want to buy five tickets for the universe room exhibition
+i want to buy five tickets for the flooded forest exhibition
+i want to buy five tickets for the antarctic base exhibition
+i want to buy five tickets for the geological wall exhibition
+i want to buy five tickets for the sustainable building exhibition
+i want to buy six tickets for the universe room exhibition
+i want to buy six tickets for the flooded forest exhibition
+i want to buy six tickets for the antarctic base exhibition
+i want to buy six tickets for the geological wall exhibition
+i want to buy six tickets for the sustainable building exhibition
+i want to buy a ticket for the exhibition about sustainability
+i want to buy a ticket for the exhibition about gravity
+i want to buy a ticket for the exhibition about matter
+i want to buy a ticket for the exhibition about brain
+i want to buy one ticket for the exhibition about climate change
+i want to buy one ticket for the exhibition about environment
+i want to buy one ticket for the exhibition about evolution
+i want to buy one ticket for the exhibition about national geographic
+i want to buy tickets for the exhibition about evolution
+i want to buy tickets for the exhibition about rock
+i want to buy tickets for the exhibition about amazon
+i want to buy tickets for the exhibition about education
+i want to buy two tickets for the exhibition about technology
+i want to buy two tickets for the exhibition about space
+i want to buy two tickets for the exhibition about floodings
+i want to buy two tickets for the exhibition about efficiency
+i want to buy three tickets for the exhibition about earth
+i want to buy three tickets for the exhibition about nature
+i want to buy three tickets for the exhibition about building
+i want to buy three tickets for the exhibition about vulcanos
+i want to buy four tickets for the exhibition about rocks
+i want to buy four tickets for the exhibition about cosmos
+i want to buy four tickets for the exhibition about matter
+i want to buy four tickets for the exhibition about stars
+i want to buy five tickets for the exhibition about gravity
+i want to buy five tickets for the exhibition about cosmos
+i want to buy five tickets for the exhibition about erosion
+i want to buy five tickets for the exhibition about plants
+i want to buy six tickets for the exhibition about education
+i want to buy six tickets for the exhibition about matter
+i want to buy six tickets for the exhibition about rock
+i want to buy six tickets for the exhibition about gravity
+i want to buy a ticket for the exhibition on science
+i want to buy a ticket for the exhibition on climate
+i want to buy a ticket for the exhibition on landscape
+i want to buy a ticket for the exhibition on efficiency
+i want to buy one ticket for the exhibition on south america
+i want to buy one ticket for the exhibition on rocks
+i want to buy one ticket for the exhibition on mars
+i want to buy one ticket for the exhibition on water
+i want to buy tickets for the exhibition on earth
+i want to buy tickets for the exhibition on plants
+i want to buy tickets for the exhibition on rock
+i want to buy tickets for the exhibition on temperature
+i want to buy two tickets for the exhibition on national geographic
+i want to buy two tickets for the exhibition on brain
+i want to buy two tickets for the exhibition on rivers
+i want to buy two tickets for the exhibition on science
+i want to buy three tickets for the exhibition on environment
+i want to buy three tickets for the exhibition on big bang
+i want to buy three tickets for the exhibition on architecture
+i want to buy three tickets for the exhibition on south america
+i want to buy four tickets for the exhibition on universe
+i want to buy four tickets for the exhibition on rock
+i want to buy four tickets for the exhibition on photographer
+i want to buy four tickets for the exhibition on physics
+i want to buy five tickets for the exhibition on exploration
+i want to buy five tickets for the exhibition on education
+i want to buy five tickets for the exhibition on architecture
+i want to buy five tickets for the exhibition on temperature
+i want to buy six tickets for the exhibition on moon
+i want to buy six tickets for the exhibition on earth
+i want to buy six tickets for the exhibition on floodings
+i want to buy six tickets for the exhibition on photos
+a ticket for the universe room exhibition
+a ticket for the flooded forest exhibition
+a ticket for the antarctic base exhibition
+a ticket for the geological wall exhibition
+a ticket for the sustainable building exhibition
+one ticket for the universe room exhibition
+one ticket for the flooded forest exhibition
+one ticket for the antarctic base exhibition
+one ticket for the geological wall exhibition
+one ticket for the sustainable building exhibition
+tickets for the universe room exhibition
+tickets for the flooded forest exhibition
+tickets for the antarctic base exhibition
+tickets for the geological wall exhibition
+tickets for the sustainable building exhibition
+two tickets for the universe room exhibition
+two tickets for the flooded forest exhibition
+two tickets for the antarctic base exhibition
+two tickets for the geological wall exhibition
+two tickets for the sustainable building exhibition
+three tickets for the universe room exhibition
+three tickets for the flooded forest exhibition
+three tickets for the antarctic base exhibition
+three tickets for the geological wall exhibition
+three tickets for the sustainable building exhibition
+four tickets for the universe room exhibition
+four tickets for the flooded forest exhibition
+four tickets for the antarctic base exhibition
+four tickets for the geological wall exhibition
+four tickets for the sustainable building exhibition
+five tickets for the universe room exhibition
+five tickets for the flooded forest exhibition
+five tickets for the antarctic base exhibition
+five tickets for the geological wall exhibition
+five tickets for the sustainable building exhibition
+six tickets for the universe room exhibition
+six tickets for the flooded forest exhibition
+six tickets for the antarctic base exhibition
+six tickets for the geological wall exhibition
+six tickets for the sustainable building exhibition
+a ticket for the exhibition about rivers
+a ticket for the exhibition about rock
+a ticket for the exhibition about animals
+a ticket for the exhibition about nature
+one ticket for the exhibition about light
+one ticket for the exhibition about efficiency
+one ticket for the exhibition about earth
+one ticket for the exhibition about animals
+tickets for the exhibition about brain
+tickets for the exhibition about light
+tickets for the exhibition about evolution
+tickets for the exhibition about floodings
+two tickets for the exhibition on technology
+two tickets for the exhibition on brazil
+two tickets for the exhibition on evolution
+two tickets for the exhibition on efficiency
+three tickets for the exhibition on brain
+three tickets for the exhibition on stars
+three tickets for the exhibition on space
+three tickets for the exhibition on animals
+four tickets for the exhibition on brain
+four tickets for the exhibition on erosion
+four tickets for the exhibition on education
+four tickets for the exhibition on landscape
+five tickets for the exhibition on life
+five tickets for the exhibition on south america
+five tickets for the exhibition on rock
+five tickets for the exhibition on light
+six tickets for the exhibition on water
+six tickets for the exhibition on life
+six tickets for the exhibition on photographer
+six tickets for the exhibition on rivers
+are there any more tickets?
+are there any more tickets for the universe room exhibition
+are there any more tickets for the flooded forest exhibition
+are there any more tickets for the antarctic base exhibition
+are there any more tickets for the geological wall exhibition
+are there any more tickets for the sustainable building exhibition
+are there any more tickets for the exhibition on climate
+are there any more tickets for the exhibition on erosion
+are there any more tickets for the exhibition on floodings
+are there any more tickets for the exhibition on photographer
+are tickets available for the exhibition about floodings
+are tickets available for the exhibition about sustainability
+are tickets available for the exhibition about water
+are tickets available for the exhibition about stars
+i want tickets for the museum
+i want to go on Aug 22 are there tickets for that day
+i want to go on Mar 11 are there tickets for that day
+i want to go on Jun 20 are there tickets for that day
+i want to go on Jun 23 are there tickets for that day
+i want to go this Wednesday are there tickets for that day
+i want to go this Saturday are there tickets for that day
+i want to go on Saturday are there tickets for that day
+i want to go next Sunday are there tickets for that day
+i want to go to the museum are there any tickets this week?
+how much do two tickets for the museum cost?
+how much do three tickets for the museum cost?
+how much do four tickets for the museum cost?
+how much do five tickets for the museum cost?
+how much do six tickets for the museum cost?
+one ticket for the caixa museum please
+two tickets for the caixa museum please
+three tickets for the caixa museum please
+four tickets for the caixa museum please
+five tickets for the caixa museum please
+six tickets for the caixa museum please
+are there still tickets available for the caixa museum on thursday
+i would like to buy tickets
+can i buy a ticket for the caixa museum
+i wish to buy caixa museum tickets
+can i purchase tickets for next week
+i would like to go to the universe room exhibition on 06 Jul
+i would like to go to the universe room exhibition on Sep 05
+i would like to go to the universe room exhibition on 30 Jun
+i would like to go to the universe room exhibition on Oct 27
+i would like to go to the universe room exhibition next weekend
+i would like to go to the universe room exhibition next Saturday
+i would like to go to the universe room exhibition this Friday
+i would like to go to the universe room exhibition this month
+i would like to go to the flooded forest exhibition on 08 Nov
+i would like to go to the flooded forest exhibition on Dec 11
+i would like to go to the flooded forest exhibition on 25 Jan
+i would like to go to the flooded forest exhibition on Jul 27
+i would like to go to the flooded forest exhibition on Tuesday
+i would like to go to the flooded forest exhibition next Wednesday
+i would like to go to the flooded forest exhibition this Thursday
+i would like to go to the flooded forest exhibition next weekend
+i would like to go to the antarctic base exhibition on 13 Jul
+i would like to go to the antarctic base exhibition on 25 Apr
+i would like to go to the antarctic base exhibition on 13 Mar
+i would like to go to the antarctic base exhibition on 17 May
+i would like to go to the antarctic base exhibition next Saturday
+i would like to go to the antarctic base exhibition next Friday
+i would like to go to the antarctic base exhibition on Thursday
+i would like to go to the antarctic base exhibition this Monday
+i would like to go to the geological wall exhibition on Sep 14
+i would like to go to the geological wall exhibition on Jun 21
+i would like to go to the geological wall exhibition on Sep 27
+i would like to go to the geological wall exhibition on Apr 23
+i would like to go to the geological wall exhibition this weekend
+i would like to go to the geological wall exhibition on Friday
+i would like to go to the geological wall exhibition this Saturday
+i would like to go to the geological wall exhibition next Saturday
+i would like to go to the sustainable building exhibition on 20 Jun
+i would like to go to the sustainable building exhibition on 20 Dec
+i would like to go to the sustainable building exhibition on Dec 23
+i would like to go to the sustainable building exhibition on 26 Feb
+i would like to go to the sustainable building exhibition today
+i would like to go to the sustainable building exhibition next week
+i would like to go to the sustainable building exhibition this weekend
+i would like to go to the sustainable building exhibition this Saturday
+i need two tickets
+i need three tickets
+i need four tickets
+i need five tickets
+i need six tickets

@@ -1,0 +1,22 @@
+Exhibitions
+Future shows
+What's on
+I'd like to see the schedule
+I want to know which exhibitions the museum has
+What can I see at the CosmoCaixa museum
+What does the museum have now
+How many exhibitions does the CosmoCaixa have
+Is the CosmoCaixa museum for everyone
+Are there exhibitions for kids
+Which exhibition is best suited for children
+What is [EXHIBITION_NAME] about
+Who is the exhibition [EXHIBITION_NAME] by
+Who is the exhibition about [EXHIBITION_TOPIC] by
+Who worked on the [EXHIBITION_NAME] exhibition
+When does the [EXHIBITION_NAME] exhibit start
+When does the exhibit about [EXHIBITION_TOPIC] finish
+Which artists are you showing
+Tell me about the [EXHIBITION_NAME] exhibit 
+Can you tell me more about the [EXHIBITION_NAME] exhibition
+I am visiting the museum on [DATE] which parts of the museum should I see
+What can you tell me about the [EXHIBITION_NAME] exhibition

@@ -1,0 +1,19 @@
+I want to visit the museum
+Can you recommend me an exhibit
+What exhibits do you recommend
+I don't know what to choose
+Can you help me decide
+Which recommendations on exhibitions do you have for visiting the museum
+I like [EXHIBITION_TOPIC]
+I'm interested in [EXHIBITION_TOPIC]
+What do you have related to [EXHIBITION_TOPIC]
+I love [EXHIBITION_TOPIC]
+Show me exhibits about [EXHIBITION_TOPIC]
+Show me stuff on [EXHIBITION_TOPIC]
+Is there an exhibition about [EXHIBITION_TOPIC]
+I'd like to hear about [EXHIBITION_TOPIC]
+I'd like to learn about [EXHIBITION_TOPIC]
+I want to learn more about [EXHIBITION_TOPIC] which exhibition do you recommend
+I love [EXHIBITION_TOPIC] which exhibition should I go to
+[EXHIBITION_TOPIC] is a passion of mine does any of the exhibitions in the Caixa museum cover this
+Would you advise me to go to [EXHIBITION_NAME]

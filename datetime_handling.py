@@ -10,6 +10,7 @@ __author__ = 'Davide L, Ilse M, Stephanie R'
 from dateparser import DateDataParser
 from dateutil import parser
 from dateutil.relativedelta import *
+import json
 
 def get_date(input_date):
     """
@@ -50,6 +51,13 @@ def get_date(input_date):
         else:
             raise ValueError('Date inserted is invalid')
 
+def check_date(date, number):
+    dict = json.load("data.json")
+    if dict[date] >= number:
+        return True
+    else:
+        return False
+        
 if __name__ == "__main__":
     date = input("When?\n")
     print(get_date(date))

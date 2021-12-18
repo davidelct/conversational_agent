@@ -22,8 +22,8 @@ def clean_text(text):
 model = pickle.load(open('model.sav', 'rb'))
 tf1 = pickle.load(open("tfidf1.pkl", 'rb'))
 tf1_new = TfidfVectorizer(vocabulary = tf1.vocabulary_)
-classes = ["tix", "interests", "info", "welcome", "fallback"]
-query = "My favourite food is pasta"
+classes = ["tix", "interests", "info", "fallback", "welcome"]
+query = "I walk on earth"
 query = clean_text(query)
 query = tf1_new.fit_transform([query])
 pred = model.predict(query)

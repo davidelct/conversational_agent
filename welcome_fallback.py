@@ -18,8 +18,12 @@ for sent in sentences:
     if len(new_sent)>20 and len(new_sent)<125:
         new_sentences.append(new_sent)
 sample_sents = sample(new_sentences, 600)
+extra_sents = ["i want to go flying", "i want to go diving", "i want to go on an adventure", "i want to buy a book", "i want to buy some clothes", "i want to buy fruit", "i want to get drunk", "i'd like some fries"]
 with open("data/augmented/fallback.txt", "w") as f:
     for sentence in sample_sents:
+        f.write(sentence)
+        f.write("\n")
+    for sentence in extra_sents:
         f.write(sentence)
         f.write("\n")
 
@@ -27,7 +31,10 @@ with open("data/augmented/fallback.csv", "w") as f:
     f.write("phrase,class")
     f.write("\n")
     for sentence in sample_sents:
-        f.write(sentence + ",4")
+        f.write(sentence + ",3")
+        f.write("\n")
+    for sentence in extra_sents:
+        f.write(sentence + ",3")
         f.write("\n")
 
 with open("names.txt", "r") as f:
@@ -65,5 +72,5 @@ with open("data/augmented/welcome.csv", "w") as f:
     f.write("phrase,class")
     f.write("\n")
     for sentence in new_welcome:
-        f.write(sentence + ",3")
+        f.write(sentence + ",4")
         f.write("\n")

@@ -4,7 +4,7 @@ from collections import OrderedDict
 from random import sample
 
 
-def augment(path_to_data, output_path, sample_size=0, short=False):
+def augment(path_to_data, output_path, csv_output_path, label, sample_size=0, short=False):
     numbers = ['two', 'three', 'four', 'five', 'six']
 
     interests = ['universe', 'space', 'cosmos', 'brain', 'big bang', 'evolution', 'science', 'life', 'physics', 'earth', 'sun', 'moon', 'mars', 'light', 'gravity', 'matter', 'planets', 'stars', 'nature', 'technology', 'floodings', 'forest', 'jungle', 'amazon', 'plants', 'water', 'ecosystem', 'biodiversity', 'brazil',
@@ -139,11 +139,18 @@ def augment(path_to_data, output_path, sample_size=0, short=False):
         f.write(phrase)
         f.write('\n')
 
+    with open(csv_output_path, "w") as f:
+        f.write("phrase,class")
+        f.write("\n")
+        for sentence in dates_augmented_phrases:
+            f.write(sentence +","+ str(label))
+            f.write("\n")
+
 
 path_to_tix = 'data/tix.txt'
 path_to_info = 'data/info.txt'
 path_to_interests = 'data/interests.txt'
 
-augment(path_to_tix, 'data/augmented/tix.txt', sample_size = 4, short=True)
-augment(path_to_info, 'data/augmented/info.txt', sample_size= 29, short=True)
-augment(path_to_interests, 'data/augmented/interests.txt')
+augment(path_to_tix, 'data/augmented/tix.txt','data/augmented/tix.csv', 0, sample_size = 4, short=True)
+augment(path_to_info, 'data/augmented/info.txt', 'data/augmented/info.csv',2, sample_size= 29, short=True)
+augment(path_to_interests, 'data/augmented/interests.txt', 'data/augmented/interests.csv', 1)

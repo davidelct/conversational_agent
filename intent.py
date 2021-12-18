@@ -32,9 +32,11 @@ class Tickets(Intent):
         for key, value in self.parameters.values():
             if value == None:
                 self.prompt(key)
-        return self.prompt("DATE")
+        return None
                              #if none then the code should check the date -if possible, ask if okay -if not ask for date
-    
+    def ticket_available(self):
+        return datetime_handling.check_date(self.parameters["DATE"], self.parameters["NUMBER"])
+
     def prompt(self, slot):
         if slot == "CARDINAL":
             sentences = ["How many tickets do you want?", "How many tickets do you want to buy?", " How many tickets do you need?"]
@@ -42,14 +44,19 @@ class Tickets(Intent):
         elif slot == "EXHIBITION":
             sentences = ["Sure, Which exhibitions for?", "Perfect, Which exhibition do you want to visit?",  "Great, Do you want it for the general entrance or a specific exhibition?"]
             return sample(sentences, 1)
-        elif slot == "DATE":
-            self.available = datetime_handling.check_date(self.parameters["DATE"], self.parameters["NUMBER"])
-            if self.available == False:
-                sentences = ["So sorry we have no tickets for", self.parameters["DATE"],  ", another day maybe?", "Sorry tickets for ", self.parameters["DATE"],  " run out, what other day suits you?", "Sorry, ", self.parameters["DATE"],  " we are not available for your visit, could you tell me another day?"]
-                return sample(sentences, 1)
+        elif slot == "NOT_AVAIL":
+            sentences = ["So sorry we have no tickets for" + str(self.parameters["DATE"]) +  ", another day maybe?", "Sorry tickets for " + str(self.parameters["DATE"]) +  " run out, what other day suits you?", "Sorry, " + str(self.parameters["DATE"]) +  " we are not available for your visit, could you tell me another day?"]
+            return sample(sentences, 1)
+        elif slot == "FULL":
+            sentences = ["Am I correct that you want to buy " + str(self.parameters["NUMBER"]) + " tickets for the exhibition " + str(self.parameters["EXHIBITION"]) + " for " + str(self.parameters["DATE"]) + "? Respons with YES or NO please."]
+            return sample(sentences, 1)
                 
-    def response(res_type):
-        pass
+    def response(self, confirm):
+        if confirm.lower() == "yes":
+            return "Here is your ticket!"
+        elif confirm.lower() == "no":
+            return "Please tell me what the information should be."
+
 
     
 

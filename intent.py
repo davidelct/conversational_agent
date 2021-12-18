@@ -13,9 +13,9 @@ class Intent():
 
 class Tickets(Intent):
 
-    def __init__(self, number = None, exhibition = None):
+    def __init__(self):
         super().__init__()
-        self.parameters = {"DATE": datetime_handling.get_date("today"), "CARDINAL": number, "EXHIBITION": exhibition}
+        self.parameters = {"DATE": datetime_handling.get_date("today"), "CARDINAL": None, "EXHIBITION": None}
         self.available = None
 
     def ents_new_sentence(self, sentence):

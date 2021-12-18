@@ -1,0 +1,9 @@
+{
+    "exhibitions":[
+        {"name":"Universe Room", "description":"The Universo Room presents a storyline that, chronologically, spans from the Big Bang to the last frontiers of knowledge, a free tour whose objective is to stimulate the visitor's scientific curiosity through interactive experiences, real objects and scientific and artistic reproductions of the highest quality", "artist":"This exhibition is developed by the Cosmocaixa Museum"},
+        {"name":"flooded forest", "description":"The Flooded Forest offers you the opportunity to immerse yourself in this ecosystem where 50% of the planet's biodiversity lives. In this fragment of rainforest you will be able to discover some of the most representative species of the Amazon: alligators, ants, boas, fish, tropical birds and plants", "artist":"This exhibition is developed by the Cosmocaixa Museum"},
+        {"name":"Antarctic Base", "description":"You will discover large-format photographs of its biodiversity and images documenting the expeditions that promoted the golden age of polar exploration in Antarctica", "create":"Photographers of the stature of Paul Nicklen, Cristina Mittermeier, Frans Lanting, Maria Stenzel, Keith Ladzinski and William R. Curtsinger are some of the artists who have participated"},
+        {"name":"Geological Wall", "description":"The Geological Wall is made up of seven large real pieces originated by different geological processes, which have contributed to shaping the structure of our planet", "create":"This exhibition is developed by the Cosmocaixa Museum"},
+        {"name":"Sustainable building", "description":"The Green Building project, pursues education showing the public current and future environmental improvements", "create":"This exhibition is developed by the Cosmocaixa Museum"}
+    ]
+}

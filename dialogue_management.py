@@ -19,12 +19,13 @@ def str_to_intent(label):
         return(Fallback())
 
 
-query = ask("Hello, my name is Cosmo. How can I help you?")
+response = ask("Hello, my name is Cosmo. How can I help you?")
 answer = "yes"
 while(answer == "yes"):
-    intent = str_to_intent(get_intent(query))
-    if type(intent) == type(GiveInformation):
-        intent.classify_question(query)
+    str_intent = get_intent(response)
+    intent = str_to_intent(str_intent)
+    if str_intent == "info":
+        intent.classify_question(response)
         if intent.query == "Are there exhibitions for kids?":
             say("The museum is a beautiful place for all the members of the family to enjoy learning while playing")
             ''' or with grounding
@@ -36,8 +37,8 @@ while(answer == "yes"):
                 intent.classify_question(response)''' 
         elif intent.query == "I want to know which exhibitions the museum has":
             say("The museum has five permanent exhibitions: the flooded forest, the universe room, the antartic base, the geologic wall and the sustainable building")
-        else: intent.new_sentence(query)
-    else: intent.new_sentence(query)
+        else: intent.new_sentence(response)
+    else: intent.new_sentence(response)
     answer = ask("Can I help you with anything else?")
     if answer == "yes":
         query = ask("What can I help you with?")

@@ -1,10 +1,8 @@
 from ner import parse
 from random import sample
-from datetime_handling import get_date
 import json
-from asr import ask,say
+from communication import ask,say
 from intent_classifier import get_intent
-from word2number import w2n
 
 class RecommendExhibit:
 

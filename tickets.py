@@ -5,6 +5,19 @@ import json
 from asr import ask,say
 from intent_classifier import get_intent
 from word2number import w2n
+import intent
+
+def str_to_intent(label):
+    if label == "tix":
+        return(intent.Tickets())
+    if label == "interest":
+        return(intent.Interest())
+    if label == "info":
+        return(intent.Info())
+    if label == "welcome":
+        return(intent.Welcome())
+    else:
+        return(intent.Fallback())
 
 class PurchaseTickets:
 
@@ -23,6 +36,18 @@ class PurchaseTickets:
         self.exhibit = None
     
     def new_sentence(self, sentence):
+        new_intent = get_intent(sentence)
+        if new_intent not in intents:
+            if new_intent == "interest":
+                answer = ask("I can give you a recommendation for exhibits based on your interests, would this be something you're interested in?")
+                if answer == "yes":
+                    intents.append(new_intent)
+                    str_to_intent(intents[len(intents)-1]).new_sentence(sentence)
+            if new_intent == "info":
+                ask("Do you want more information about certain exhibits or the museum before continuing?")
+                if answer == "yes":
+                    intents.append(new_intent)
+                    str_to_intent(intents[len(intents)-1]).new_sentence(sentence)
         entities = parse(sentence)
         self.fill_slots(entities)
 
@@ -118,7 +143,9 @@ class PurchaseTickets:
             say(sentence)
 
 query = ask("Hello, my name is Cosmo. How can I help you?")
-intent = get_intent(query)
-if intent == "tix":
-    intent = PurchaseTickets()
-    intent.new_sentence(query)
+intent_ = get_intent(query)
+intents = []
+intents.append(intent_)
+
+for intent_ in intents:
+    str_to_intent(intent).new_sentence(query)

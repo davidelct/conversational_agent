@@ -26,12 +26,12 @@ def generate_data(today):
 
     data = {}
     for i in range(len(days)):
-        key = days[i].strftime("%d %b %Y")
+        key = days[i].strftime("%d %b")
         if days[i].weekday() == 0: # if Monday
             data[key] = 0
         else:
             data[key] = random.randint(0,800)
-    datafile = open("data.json", "w")
+    datafile = open("tickets_data.json", "w")
     json.dump(data, datafile)
 
 if __name__ == "__main__":

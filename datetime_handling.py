@@ -34,26 +34,28 @@ def get_date(input_date):
             elif "next" in input_date:
                 this = parser.parse(day)
                 output_date = this + relativedelta(weeks=+1)
-                return output_date.strftime("%d %b %y")
+                return output_date.strftime("%d %b")
     
     # Then we try to parse the date with dateutil parser,
     # which is good at weekdays
     try:
         output_date = parser.parse(input_date)
-        return output_date.strftime("%d %b %y")
+        return output_date.strftime("%d %b")
     except parser.ParserError:
         # If that fails, use dataparser, 
         # which is good at everything else
         dp_parser = DateDataParser(languages=['en'])
         output_date = dp_parser.get_date_data(input_date).date_obj
         if output_date is not None:
-            return output_date.strftime("%d %b %y")
+            return output_date.strftime("%d %b")
         else:
             raise ValueError('Date inserted is invalid')
 
 def check_date(date, number):
-    dict = json.load("data.json")
-    if dict[date] >= number:
+    f = open("data.json", 'r')
+    dict = json.load(f)
+    date = get_date(date)
+    if int(dict[date]) >= int(number):
         return True
     else:
         return False

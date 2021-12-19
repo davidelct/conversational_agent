@@ -29,7 +29,7 @@ class RecommendExhibit:
             self.action()
 
     def empty_slots(self):
-        return not len(self.interests)
+        return len(self.interests) == 0
 
     def request(self):
         prompts = ["What are you interested in?", "What's your passion?", "What do you like?"]

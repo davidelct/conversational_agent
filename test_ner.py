@@ -33,7 +33,11 @@ texts = ["a ticket for next weekend",
     "i want to learn more about photos which exhibition do you recommend",
     "i'd like to learn about vulcanos",
     "show me exhibits about landscape",
-    "show me exhibits about floodings"
+    "show me exhibits about floodings",
+    "evolution and nature",
+    "cosmos and universe",
+    "i like exploration and science",
+    "what about climate change and sustainability"
     ]
 
 for text in texts:

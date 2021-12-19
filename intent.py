@@ -1,9 +1,110 @@
 from pickle import NONE
 from ner import parse
-import datetime_handling
+from datetime_handling import get_date, check_date
 from random import sample
+from asr import say, ask
+import word2number as w2n
 exhibit_names = ['universe room', 'flooded forest',
                  'antarctic base', 'geological wall', 'sustainable building']
+
+class Welcome:
+
+    def __init__(self):
+        self.exhibits = ['universe room', 
+            'flooded forest', 
+            'antarctic base', 
+            'geological wall', 
+            'sustainable building'
+        ]
+        self.no_tickets = None
+        self.date = None
+        self.exhibit = None
+    
+    def new_sentence(self, sentence):
+        entities = parse(sentence)
+        self.fill_slots(entities)
+
+    def fill_slots(self, entities):
+        for entity in entities:
+            if entity.label_ == "CARDINAL":
+                self.no_tickets = self.get_number(entity.text)
+            elif entity.label_ == "DATE":
+                self.date = get_date(entity.text)
+            elif entity.label_ == "EXHIBIT":
+                self.exhibit = self.get_exhibit(entity.text)
+        else:
+            self.action()
+
+    def get_exhibit(self, exhibit):
+        if exhibit.lower() in self.exhibits:
+            return exhibit.lower()
+        else:
+            say("Sorry, I don't know which exhibit you mean.")
+            return None
+
+    def get_number(self, number):
+        try:
+            num = int(number)
+        except ValueError:
+            try:
+                num = w2n.word_to_num(number)
+            except ValueError:
+                say("Sorry, that's not a valid number.")
+                num = None
+        return num
+
+    def action(self):
+        ask("Hello, what can I do for you today?")
+
+class Welcome:
+
+    def __init__(self):
+        self.exhibits = ['universe room', 
+            'flooded forest', 
+            'antarctic base', 
+            'geological wall', 
+            'sustainable building'
+        ]
+        self.no_tickets = None
+        self.date = None
+        self.exhibit = None
+    
+    def new_sentence(self, sentence):
+        entities = parse(sentence)
+        self.fill_slots(entities)
+
+    def fill_slots(self, entities):
+        for entity in entities:
+            if entity.label_ == "CARDINAL":
+                self.no_tickets = self.get_number(entity.text)
+            elif entity.label_ == "DATE":
+                self.date = get_date(entity.text)
+            elif entity.label_ == "EXHIBIT":
+                self.exhibit = self.get_exhibit(entity.text)
+        else:
+            self.action()
+
+    def get_exhibit(self, exhibit):
+        if exhibit.lower() in self.exhibits:
+            return exhibit.lower()
+        else:
+            say("Sorry, I don't know which exhibit you mean.")
+            return None
+
+    def get_number(self, number):
+        try:
+            num = int(number)
+        except ValueError:
+            try:
+                num = w2n.word_to_num(number)
+            except ValueError:
+                say("Sorry, that's not a valid number.")
+                num = None
+        return num
+
+    def action(self):
+        ask("I am sorry, I was not able to execute your request, what can I do for you today?")
+
 class Intent():
     
     def __init__(self):
@@ -14,7 +115,7 @@ class Intent():
 
 class Tickets(Intent):
 
-    def __init__(self, date = datetime_handling.get_date("today"), number = None, exhibition = None):
+    def __init__(self, date = get_date("today"), number = None, exhibition = None):
         super().__init__()
         self.parameters = {"DATE": date, "CARDINAL": number, "EXHIBITION": exhibition}
         self.available = None
@@ -39,7 +140,7 @@ class Tickets(Intent):
         return None
                              #if none then the code should check the date -if possible, ask if okay -if not ask for date
     def ticket_available(self):
-        return datetime_handling.check_date(self.parameters["DATE"], self.parameters["CARDINAL"])
+        return check_date(self.parameters["DATE"], self.parameters["CARDINAL"])
 
     def prompt(self, slot):
         if slot == "CARDINAL":
@@ -61,10 +162,9 @@ class Tickets(Intent):
             return "Here is your ticket!"
         elif confirm.lower() == "no":
             return "Please tell me what the information should be."
-
 class Welcome(Intent):
 
-    def __init__(self, date = datetime_handling.get_date("today"), number = None, exhibition = None, interest = None):
+    def __init__(self, date = get_date("today"), number = None, exhibition = None, interest = None):
         super().__init__()
         self.parameters = {"DATE": date, "CARDINAL": number, "EXHIBITION": exhibition, "INTEREST": interest}
 

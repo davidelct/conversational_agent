@@ -1,0 +1,27 @@
+{
+    "universe room": {
+        "description": "The Universe Room presents a storyline that, chronologically, spans from the Big Bang to the last frontiers of knowledge. In this tour the visitor's scientific curiosity is stimulated through interactive experiences, real objects and scientific and artistic reproductions of the highest quality",
+        "curator": "This exhibition is developed by the Cosmocaixa Museum",
+        "interests": ["universe", "space", "cosmos", "big bang", "evolution", "science", "life", "physics", "earth", "sun", "moon", "mars", "light", "gravity", "matter", "planets", "stars", "technology","astronomy","exploration"]
+    },
+    "flooded forest": {
+        "description": "The Flooded Forest offers you the opportunity to immerse yourself in the Amazon Forest ecosystem, which contains 50% of the planet's biodiversity. In this fragment of rainforest you will be able to discover some of the most representative species of the Amazon: alligators, ants, boas, fish, tropical birds and plants",
+        "curator": "This exhibition is developed by the Cosmocaixa Museum",
+        "interests": ["forests", "jungle", "amazon", "plants", "water", "biodiversity", "brazil", "south america", "animals", "climate", "climate change", "rivers", "evolution","nature"]
+    },
+    "antarctic base": {
+        "description": "In the antarctic base, you will discover large-format photographs of the biodiversity of the South Pole, as well as images documenting the expeditions that promoted the golden age of polar exploration in Antarctica",
+        "interests": ["artic", "south pole", "north pole", "photos", "ecology", "organisms", "environment", "photography", "exploration","climate change","biodiversity","climate","nature"],
+        "curator": "Photographers of the stature of Paul Nicklen, Cristina Mittermeier, Frans Lanting, Maria Stenzel, Keith Ladzinski and William R. Curtsinger are some of the artists who have participated"
+    },
+    "geological wall": {
+        "description": "The Geological Wall is an exhibition made up of seven large real pieces of rocks originated by different geological processes, which have contributed to shaping the structure of our planet",
+        "interests": ["nature", "vulcanos", "rock", "rocks", "landscape", "earthquakes", "evolution", "earth","geology","earth"],
+        "curator": "This exhibition is developed by the Cosmocaixa Museum"
+    },
+    "sustainable building": {
+        "description": "The Green Building project shows recent environmental improvements we have achieved in architecture, as well as pointing to the future steps to build more sustainable buildings.",
+        "interests": ["sustainability", "education", "efficiency", "architecture", "climate change", "urban planning", "design"],
+        "curator": "This exhibition is developed by the Cosmocaixa Museum"
+    }
+}

@@ -1,4 +1,4 @@
-import ner
+from ner import parse
 import datetime_handling
 from random import sample
 exhibit_names = ['universe room', 'flooded forest',
@@ -9,7 +9,7 @@ class Intent():
         self.parameters = []
 
     def ents_new_sentence(self, sentence):
-        self.entities = ner.parse(sentence)
+        self.entities = parse(sentence)
 
 class Tickets(Intent):
 
@@ -19,7 +19,7 @@ class Tickets(Intent):
         self.available = None
 
     def ents_new_sentence(self, sentence):
-        self.entities = ner.parse(sentence)
+        self.entities = parse(sentence)
         self.fill_slots()
 
     def fill_slots(self):

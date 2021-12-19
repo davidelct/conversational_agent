@@ -7,6 +7,3 @@ def parse(query):
     doc = nlp(query)
     print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
     return doc.ents
-
-
-print(parse("five tickets for today for the flooded forest"))

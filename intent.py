@@ -1,8 +1,8 @@
 from pickle import NONE
 from ner import parse
-from datetime_handling import get_date, check_date
+from utils import get_date, check_date
 from random import sample
-from asr import say, ask
+from communication import say, ask
 import word2number as w2n
 exhibit_names = ['universe room', 'flooded forest',
                  'antarctic base', 'geological wall', 'sustainable building']

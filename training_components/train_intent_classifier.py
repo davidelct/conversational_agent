@@ -47,4 +47,4 @@ model.fit(X_train, y_train)
 
 y_hat = model.predict(X_test)
 print(accuracy_score(y_test,y_hat))
-pickle.dump(model, open('model.sav', 'wb'))
+pickle.dump(model, open('../models/model.sav', 'wb'))

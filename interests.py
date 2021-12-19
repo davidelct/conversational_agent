@@ -1,15 +1,13 @@
 from ner import parse
 from random import sample
-from datetime_handling import get_date
 import json
-from asr import ask,say
+from communication import ask,say
 from intent_classifier import get_intent
-from word2number import w2n
 
 class RecommendExhibit:
 
     def __init__(self):
-        data_file = open("exhibits_data.json")
+        data_file = open("data/exhibits_data.json")
         self.data = json.load(data_file)
 
         self.interests = []

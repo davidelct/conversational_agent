@@ -1,9 +1,9 @@
 import spacy
 from ner import parse
 from random import sample
-from datetime_handling import get_date
+from utils import get_date
 import json
-from asr import ask,say
+from communication import ask,say
 from intent_classifier import get_intent
 
 nlp=spacy.load('en_core_web_sm')

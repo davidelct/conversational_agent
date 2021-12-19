@@ -6,7 +6,8 @@
             "number tickets_n":["Sorry we don't have tickets", "Sorry we don't have enough tickets", "So sorry we have no tickets for today, another day maybe?"] 
     },
     "exhibit":{ 
-        "enegative":["So sorry we have no tickets for that exhibition, another one maybe?", "Sorry, we do not have that exhibition available for your visit, could you want to visit another one?"]
+        "enegative":["So sorry we have no tickets for that exhibition, another one maybe?", "Sorry, we do not have that exhibition available for your visit, could you want to visit another one?"], 
+        "kids":["The museum is a beautiful place for all the members of the family to enjoy learning while playing","Sure, the little ones will love all the cosmocaixa have to offer them"]
     },
     "cost":{
         "cpositive":["It will cost 6 Euros", "It would be 6 Euros", "Is a total of 6 Euros", "Is 6 Euros"]  

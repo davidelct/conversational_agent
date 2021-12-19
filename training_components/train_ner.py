@@ -198,6 +198,6 @@ with nlp.disable_pipes(*unaffected_pipes):
 doc = nlp("i want to go on Aug 22 are there tickets for that day")
 print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
 
-output_dir = Path('./spacy_model/')
+output_dir = Path('../models/spacy_model/')
 nlp.to_disk(output_dir)
 print("Saved model to", output_dir)

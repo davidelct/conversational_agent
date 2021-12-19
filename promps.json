@@ -1,0 +1,14 @@
+{
+    "tickets":{
+            "date_p":["for what day?","Sure, which day do you want it for?", "Sure, which day do you want to visit the cosmocaixa museum?", "Sure, which day do you want to visit us?","Perfect, which day do you want to come?"], 
+            "date_n":["So sorry we have no tickets for that day, another day maybe?", "Sorry tickets for that day run out, what other day suits you?", "Sorry, we are not available for your visit, could you tell me another day?"],
+            "number tickets_p":["How many tickets do you want?", "How many tickets do you want to buy?", "How many tickets do you need?"],
+            "number tickets_n":["Sorry we don't have tickets", "Sorry we don't have enough tickets", "So sorry we have no tickets for today, another day maybe?"] 
+    },
+    "exhibit":{ 
+        "enegative":["So sorry we have no tickets for that exhibition, another one maybe?", "Sorry, we do not have that exhibition available for your visit, could you want to visit another one?"]
+    },
+    "cost":{
+        "cpositive":["It will cost 6 Euros", "It would be 6 Euros", "Is a total of 6 Euros", "Is 6 Euros"]  
+    }
+}

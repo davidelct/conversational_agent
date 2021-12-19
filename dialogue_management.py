@@ -1,7 +1,8 @@
-from intent import Welcome, Fallback
-from tickets import PurchaseTickets
-from info import GiveInformation
-from interests import RecommendExhibit
+from skills.welcome import Welcome
+from skills.fallback import Fallback
+from skills.tickets import PurchaseTickets
+from skills.info import GiveInformation
+from skills.interests import RecommendExhibit
 from intent_classifier import get_intent
 from communication import ask, say
 

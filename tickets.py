@@ -118,7 +118,14 @@ class PurchaseTickets:
             say(sentence)
 
 query = ask("Hello, my name is Cosmo. How can I help you?")
-intent = get_intent(query)
-if intent == "tix":
-    intent = PurchaseTickets()
-    intent.new_sentence(query)
+answer = "yes"
+while(answer == "yes"):
+    intent = get_intent(query)
+    if intent == "tix":
+        intent = PurchaseTickets()
+        intent.new_sentence(query)
+    answer = ask("Can I help you with anything else?")
+    if answer == "yes":
+        query = ask("What can I help you with?")
+    if answer == "no":
+        say("Okay, have a nice day!")

@@ -1,4 +1,4 @@
-import parsing
+from ner import parse
 import datetime_handling
 from random import sample
 exhibit_names = ['universe room', 'flooded forest',
@@ -9,7 +9,7 @@ class Intent():
         self.parameters = []
 
     def ents_new_sentence(self, sentence):
-        self.entities = parsing.get_entities(sentence, parsing.get_interests(), exhibit_names)
+        self.entities = parse(sentence)
 
 class Tickets(Intent):
 

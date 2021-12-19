@@ -97,15 +97,10 @@ if intent == "info":
     intent.classify_question(question)
     if intent.query == "Are there exhibitions for kids?":
         say("The museum is a beautiful place for all the members of the family to enjoy learning while playing")
-        '''
-        if we want to do echo-ing and grounding, it gets more complicated:
-        -------
+        ''' grounding:
         response = ask("If I understand correctly you want to know if there are exhibitions for kids?")
         if response == "yes":
             say("The museum is a beautiful place for all the members of the family to enjoy learning while playing")
-            response = ask("Can I help you with anything else?")
-            if not(response == "no"):
-                intent_ = get_intent(response) #start new convo here
         if response == "no":
             response = ask("Can you repeat the question?")
             intent.classify_question(response)'''

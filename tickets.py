@@ -117,8 +117,3 @@ class PurchaseTickets:
             sentence = "I'm sorry, we don't have an exhibition named " + self.exhibit
             say(sentence)
 
-query = ask("Hello, my name is Cosmo. How can I help you?")
-intent = get_intent(query)
-if intent == "tix":
-    intent = PurchaseTickets()
-    intent.new_sentence(query)

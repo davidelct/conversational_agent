@@ -1,9 +1,69 @@
-import pickle
-from sklearn.feature_extraction.text import TfidfVectorizer
-from utils import clean_text
-import communication
-import intent
+from intent import Welcome, Fallback
+from tickets import PurchaseTickets
+from info import GiveInformation
+from interests import RecommendExhibit
+from intent_classifier import get_intent
+from communication import ask, say
 
+def str_to_intent(label):
+    if label == "tix":
+        return(PurchaseTickets())
+    if label == "interest":
+        return(RecommendExhibit())
+    if label == "info":
+        return(GiveInformation())
+    if label == "welcome":
+        return(Welcome())
+    else:
+        return(Fallback())
+
+
+query = ask("Hello, my name is Cosmo. How can I help you?")
+answer = "yes"
+while(answer == "yes"):
+    intent = str_to_intent(get_intent(query))
+    if type(intent) == type(GiveInformation):
+        intent.classify_question(query)
+        if intent.query == "Are there exhibitions for kids?":
+            say("The museum is a beautiful place for all the members of the family to enjoy learning while playing")
+            ''' or with grounding
+            response = ask("If I understand correctly you want to know if there are exhibitions for kids?")
+            if response == "yes":
+                say("The museum is a beautiful place for all the members of the family to enjoy learning while playing")
+            if response == "no":
+                response = ask("Can you repeat the question?")
+                intent.classify_question(response)''' 
+        elif intent.query == "I want to know which exhibitions the museum has":
+            say("The museum has five permanent exhibitions: the flooded forest, the universe room, the antartic base, the geologic wall and the sustainable building")
+        else: intent.new_sentence(query)
+    else: intent.new_sentence(query)
+    answer = ask("Can I help you with anything else?")
+    if answer == "yes":
+        query = ask("What can I help you with?")
+    if answer == "no":
+        say("Okay, have a nice day!")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 def get_intent(query):
     model = pickle.load(open('model.sav', 'rb'))
     tf1 = pickle.load(open("tfidf1.pkl", 'rb'))
@@ -64,7 +124,6 @@ for case in intents:
     do_intent(case)
 
 
-'''
 start conversation: how can i help you? or hello!
 wait for response: '...'
 classify response as one of the intents with get_intent. Make a bool that says which intent is active

@@ -8,10 +8,10 @@ from intent_classifier import get_intent
 
 nlp=spacy.load('en_core_web_sm')
   
-class Info:
+class GiveInformation:
 
     def __init__(self):
-        data_file = open("expos.json")
+        data_file = open("exhibits_data.json")
         self.data = json.load(data_file)
 
         self.exhibits = ['universe room', 
@@ -78,7 +78,7 @@ class Info:
             similarity_scores.append(q.similarity(nlp(q_)))
         max_index = similarity_scores.index(max(similarity_scores))
         self.query = questions[max_index]
-
+        
     def action(self):
         if self.query == "Is the museum open on date?":
             if self.museum_open():
@@ -86,14 +86,14 @@ class Info:
             else:
                 say("Unfortunately there are no tickets available on " + str(self.date) + " remember that our museum is closed on mondays!")
         if self.query == "What is this exhibition about?":
-            pass
+            say(self.data[self.exhibit]["description"])  
         if self.query == "Who worked on this exhibition?":
-            pass
+            say(self.data[self.exhibit]["curator"])  
 
 question = ask("Hello, my name is Cosmo. How can I help you?")
 intent = get_intent(question)
 if intent == "info":
-    intent = Info()
+    intent = GiveInformation()
     intent.classify_question(question)
     if intent.query == "Are there exhibitions for kids?":
         say("The museum is a beautiful place for all the members of the family to enjoy learning while playing")

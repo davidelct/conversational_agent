@@ -2,9 +2,6 @@ from numpy import not_equal
 import spacy
 from spacy.tokens import Span
 from nltk.corpus import wordnet
-import nltk
-import pandas
-import gensim
 from collections import OrderedDict
 import json
 

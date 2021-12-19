@@ -7,6 +7,7 @@ def communicate(question):
     #open microphone and obtaining audio
 
     engine.say(question)
+    engine.runAndWait()
     r = sr.Recognizer()
     with sr.Microphone() as source:
         audio = r.listen(source)
@@ -21,4 +22,4 @@ def communicate(question):
     except sr.RequestError as e:
         communicate("Sorry I didn't understand that, can you repeat what you said?")
 
-    
+

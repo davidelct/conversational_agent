@@ -29,13 +29,13 @@ class Tickets(Intent):
                     self.parameters[label] = ent.text
         
     def empty_slot(self):
-        for key, value in self.parameters.values():
-            if value == None:
-                self.prompt(key)
+        for key in self.parameters:
+            if self.parameters[key] == None:
+                return(self.prompt(key))
         return None
                              #if none then the code should check the date -if possible, ask if okay -if not ask for date
     def ticket_available(self):
-        return datetime_handling.check_date(self.parameters["DATE"], self.parameters["NUMBER"])
+        return datetime_handling.check_date(self.parameters["DATE"], self.parameters["CARDINAL"])
 
     def prompt(self, slot):
         if slot == "CARDINAL":
@@ -48,8 +48,9 @@ class Tickets(Intent):
             sentences = ["So sorry we have no tickets for" + str(self.parameters["DATE"]) +  ", another day maybe?", "Sorry tickets for " + str(self.parameters["DATE"]) +  " run out, what other day suits you?", "Sorry, " + str(self.parameters["DATE"]) +  " we are not available for your visit, could you tell me another day?"]
             return sample(sentences, 1)
         elif slot == "FULL":
-            sentences = ["Am I correct that you want to buy " + str(self.parameters["NUMBER"]) + " tickets for the exhibition " + str(self.parameters["EXHIBITION"]) + " for " + str(self.parameters["DATE"]) + "? Respons with YES or NO please."]
+            sentences = ["Am I correct that you want to buy " + str(self.parameters["CARDINAL"]) + " tickets for the exhibition " + str(self.parameters["EXHIBITION"]) + " for " + str(self.parameters["DATE"]) + "? Respons with YES or NO please."]
             return sample(sentences, 1)
+        else: return "fault"
                 
     def response(self, confirm):
         if confirm.lower() == "yes":

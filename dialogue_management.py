@@ -1,6 +1,6 @@
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
-from test_classifier import clean_text
+from utils import clean_text
 import asr
 import intent
 
@@ -29,10 +29,11 @@ def confirm(case):
         confirm()
 
 def do_intent(case):
+    i = 0
     while not(case.empty_slot() == None):
         sent_fill_slot = asr.communicate(case.empty_slot())
         case.ents_new_sentence(sent_fill_slot)
-        confirm(case)
+    confirm(case)
 
 def new_intent():
     check = asr.communicate("Can I help you with something else? Please respond with YES or NO.")
@@ -51,6 +52,7 @@ if intent_ == "tix":
     intents.append(intent.Tickets())
 
 for case in intents:
+    case.ents_new_sentence(text)
     do_intent(case)
 
 

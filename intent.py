@@ -14,9 +14,9 @@ class Intent():
 
 class Tickets(Intent):
 
-    def __init__(self, date = datetime_handling.get_date("today"), number = None, exhibition = None, interest = None):
+    def __init__(self, date = datetime_handling.get_date("today"), number = None, exhibition = None):
         super().__init__()
-        self.parameters = {"DATE": date, "CARDINAL": number, "EXHIBITION": exhibition, "INTEREST": interest}
+        self.parameters = {"DATE": date, "CARDINAL": number, "EXHIBITION": exhibition}
         self.available = None
 
     def ents_new_sentence(self, sentence):
@@ -33,6 +33,9 @@ class Tickets(Intent):
         for key in self.parameters:
             if self.parameters[key] == None:
                 return(self.prompt(key))
+        for key in self.parameters:
+            if self.parameters[key] == None:
+                self.empty_slot()
         return None
                              #if none then the code should check the date -if possible, ask if okay -if not ask for date
     def ticket_available(self):

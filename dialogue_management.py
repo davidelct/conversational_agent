@@ -50,6 +50,14 @@ intent_ = get_intent(text)
 
 if intent_ == "tix":
     intents.append(intent.Tickets())
+elif intent_ == "interest":
+    intents.append(intent.Interest())
+elif intent_ == "info":
+    intents.append(intent.Info())
+elif intent_ == "welcome":
+    intents.append(intent.Welcome())
+else:
+    intents.append(intent.Fallback())
 
 for case in intents:
     case.ents_new_sentence(text)

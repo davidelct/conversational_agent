@@ -1,3 +1,4 @@
+from pickle import NONE
 from ner import parse
 import datetime_handling
 from random import sample
@@ -13,9 +14,9 @@ class Intent():
 
 class Tickets(Intent):
 
-    def __init__(self):
+    def __init__(self, date = datetime_handling.get_date("today"), number = None, exhibition = None, interest = None):
         super().__init__()
-        self.parameters = {"DATE": datetime_handling.get_date("today"), "CARDINAL": None, "EXHIBITION": None}
+        self.parameters = {"DATE": date, "CARDINAL": number, "EXHIBITION": exhibition, "INTEREST": interest}
         self.available = None
 
     def ents_new_sentence(self, sentence):
@@ -58,8 +59,60 @@ class Tickets(Intent):
         elif confirm.lower() == "no":
             return "Please tell me what the information should be."
 
+class Welcome(Intent):
 
+    def __init__(self, date = datetime_handling.get_date("today"), number = None, exhibition = None, interest = None):
+        super().__init__()
+        self.parameters = {"DATE": date, "CARDINAL": number, "EXHIBITION": exhibition, "INTEREST": interest}
+
+    def ents_new_sentence(self, sentence):
+        self.entities = parse(sentence)
+        self.fill_slots()
+
+    def fill_slots(self):
+        for ent in self.entities:
+            for label in self.parameters.keys():
+                if ent.label_ == label:
+                    self.parameters[label] = ent.text
+        
+    def empty_slot(self):
+        return None
+                             #if none then the code should check the date -if possible, ask if okay -if not ask for date
+    def prompt(self, slot):
+        if slot == "FULL":
+            return "yes"
+        else: return "fault"
+                
+    def response(self, confirm):
+        if confirm.lower() == "yes":
+            return "Hello, what can I do for you today?"
     
+class Fallback(Intent):
+    def __init__(self, date = datetime_handling.get_date("today"), number = None, exhibition = None, interest = None):
+        super().__init__()
+        self.parameters = {"DATE": date, "CARDINAL": number, "EXHIBITION": exhibition, "INTEREST": interest}
+
+    def ents_new_sentence(self, sentence):
+        self.entities = parse(sentence)
+        self.fill_slots()
+
+    def fill_slots(self):
+        for ent in self.entities:
+            for label in self.parameters.keys():
+                if ent.label_ == label:
+                    self.parameters[label] = ent.text
+        
+    def empty_slot(self):
+        return None
+                             #if none then the code should check the date -if possible, ask if okay -if not ask for date
+    def prompt(self, slot):
+        if slot == "FULL":
+            return "yes"
+        else: return "fault"
+                
+    def response(self, confirm):
+        if confirm.lower() == "yes":
+            return "Sorry I didn't understand that, what can I do for you today?"
 
 """
 class Info(Intent):

@@ -10,20 +10,21 @@ def ask(question):
     engine.say(question)
     print(question)
     engine.runAndWait()
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        audio = r.listen(source)
+    return input("")
+    # r = sr.Recognizer()
+    # with sr.Microphone() as source:
+    #     audio = r.listen(source)
 
-    #recognize what you said and convert it to text
-    try:
-        print(r.recognize_google(audio))
-        return(r.recognize_google(audio))
+    # #recognize what you said and convert it to text
+    # try:
+    #     print(r.recognize_google(audio))
+    #     return(r.recognize_google(audio))
         
-        #errors responses 
-    except sr.UnknownValueError:
-        return(ask("Sorry I didn't understand that, can you repeat?"))
-    except sr.RequestError as e:
-        return(ask("Sorry I didn't understand that, can you repeat?"))
+    #     #errors responses 
+    # except sr.UnknownValueError:
+    #     return(ask("Sorry I didn't understand that, can you repeat?"))
+    # except sr.RequestError as e:
+    #     return(ask("Sorry I didn't understand that, can you repeat?"))
 
 def say(sentence):
     engine = pyttsx3.init()

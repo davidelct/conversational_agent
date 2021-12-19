@@ -7,7 +7,7 @@ from intent_classifier import get_intent
 class RecommendExhibit:
 
     def __init__(self):
-        data_file = open("data/exhibits_data.json")
+        data_file = open("../data/exhibits_data.json")
         self.data = json.load(data_file)
 
         self.interests = []

@@ -19,7 +19,7 @@ class Tickets(Intent):
         self.available = None
 
     def ents_new_sentence(self, sentence):
-        self.entities = parsing.get_entities(sentence, parsing.get_interests(), exhibit_names)
+        self.entities = parse(sentence)
         self.fill_slots()
 
     def fill_slots(self):

@@ -14,7 +14,7 @@ class ProvideInfo:
         self.data_tickets = json.load(data_file_tickets)
         data_file_exhibits = open("data/exhibits_data.json")
         self.data_exhibits = json.load(data_file_exhibits)
-        self.classifier = spacy.load("en_core_web....")
+        self.classifier = spacy.load("en_core_web_sm")
 
         self.exhibits = ['universe room', 
             'flooded forest', 

@@ -1,9 +1,9 @@
-from ner import parse
-from utils import get_date
-from communication import ask, say
-import word2number as w2n
+from word2number import w2n
+from dateparser import DateDataParser
+from dateutil import parser
+from dateutil.relativedelta import *
 
-class Fallback():
+class Fallback:
 
     def __init__(self):
         self.exhibits = ['universe room', 
@@ -15,39 +15,71 @@ class Fallback():
         self.no_tickets = None
         self.date = None
         self.exhibit = None
-    
-    def new_sentence(self, sentence):
-        entities = parse(sentence)
-        self.fill_slots(entities)
 
-    def fill_slots(self, entities):
+    def add_entities(self, entities):
         for entity in entities:
             if entity.label_ == "CARDINAL":
-                self.no_tickets = self.get_number(entity.text)
+                self.no_tickets = entity
             elif entity.label_ == "DATE":
-                self.date = get_date(entity.text)
+                self.date = entity
             elif entity.label_ == "EXHIBIT":
-                self.exhibit = self.get_exhibit(entity.text)
-        else:
-            self.action()
+                self.exhibit = entity
 
-    def get_exhibit(self, exhibit):
-        if exhibit.lower() in self.exhibits:
-            return exhibit.lower()
+    def get_number(self):
+        try:
+            return int(self.no_tickets.text)
+        except ValueError:
+            return w2n.word_to_num(self.no_tickets.text)
+    
+    def get_exhibit(self):
+        if self.exhibit.text.lower() in self.exhibits:
+            return self.exhibit.text.lower()
         else:
-            say("Sorry, I don't know which exhibit you mean.")
             return None
 
-    def get_number(self, number):
-        try:
-            num = int(number)
-        except ValueError:
-            try:
-                num = w2n.word_to_num(number)
-            except ValueError:
-                say("Sorry, that's not a valid number.")
-                num = None
-        return num
+    def get_date(self):
+        input_date = self.date.text.lower()
+        
+        weekdays = ("monday", "tuesday", "wednesday", "thursday", "friday", 
+        "saturday", "sunday")
 
-    def action(self):
-        ask("I am sorry, I was not able to execute your request")
+        # We first handle dates like "this friday", "next friday", "on friday"
+        for day in weekdays:
+            if day in input_date:
+                if "this" in input_date:
+                    input_date = day
+                elif "next" in input_date:
+                    this = parser.parse(day)
+                    output_date = this + relativedelta(weeks=+1)
+                    return output_date.strftime("%d %b")
+        
+        # Then we try to parse the date with dateutil parser,
+        # which is good at weekdays
+        try:
+            output_date = parser.parse(input_date)
+            return output_date.strftime("%d %b")
+        except parser.ParserError:
+            # If that fails, use dataparser, 
+            # which is good at everything else
+            dp_parser = DateDataParser(languages=['en'])
+            output_date = dp_parser.get_date_data(input_date).date_obj
+            if output_date is not None:
+                return output_date.strftime("%d %b")
+            else:
+                raise ValueError('Date inserted is invalid')
+
+    def get_entities(self):
+        entities = []
+        if self.no_tickets != None: 
+            entities.append(self.no_tickets)
+        if self.date != None:
+            entities.append(self.date)
+        if self.exhibit != None:
+            entities.append(self.exhibit)
+        return entities
+
+    def respond(self):
+        response = "I'm sorry, I don't understand what you mean by that."
+        error = True
+        self.complete = True
+        return response, error

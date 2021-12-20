@@ -1,8 +1,7 @@
-from intent_classifier import get_intent
-from ner import parse
-from utils import get_date
-from communication import ask, say
-import word2number as w2n
+from word2number import w2n
+from dateparser import DateDataParser
+from dateutil import parser
+from dateutil.relativedelta import *
 
 class Welcome():
 
@@ -16,39 +15,76 @@ class Welcome():
         self.no_tickets = None
         self.date = None
         self.exhibit = None
-    
-    def new_sentence(self, sentence):
-        entities = parse(sentence)
-        self.fill_slots(entities)
+        self.interests = []
 
-    def fill_slots(self, entities):
+    def add_entities(self, entities):
         for entity in entities:
             if entity.label_ == "CARDINAL":
-                self.no_tickets = self.get_number(entity.text)
+                self.no_tickets = entity
             elif entity.label_ == "DATE":
-                self.date = get_date(entity.text)
+                self.date = entity
             elif entity.label_ == "EXHIBIT":
-                self.exhibit = self.get_exhibit(entity.text)
-        else:
-            self.action()
+                self.exhibit = entity
+            elif entity.label_ == "INTEREST":
+                self.interests.append(entity)
 
-    def get_exhibit(self, exhibit):
-        if exhibit.lower() in self.exhibits:
-            return exhibit.lower()
+    def get_exhibit(self):
+        if self.exhibit.text.lower() in self.exhibits:
+            return self.exhibit.text.lower()
         else:
-            say("Sorry, I don't know which exhibit you mean.")
             return None
 
-    def get_number(self, number):
+    def get_number(self):
         try:
-            num = int(number)
+            return int(self.no_tickets.text)
         except ValueError:
-            try:
-                num = w2n.word_to_num(number)
-            except ValueError:
-                say("Sorry, that's not a valid number.")
-                num = None
-        return num
+            return w2n.word_to_num(self.no_tickets.text)
+    
+    def get_date(self):
+        input_date = self.date.text.lower()
+        
+        weekdays = ("monday", "tuesday", "wednesday", "thursday", "friday", 
+        "saturday", "sunday")
 
-    def action(self):
-        ask("Hello, what can I do for you today? I can help you with purchasing tickets, recommending exhibitions or giving general information about the museum. ")
+        # We first handle dates like "this friday", "next friday", "on friday"
+        for day in weekdays:
+            if day in input_date:
+                if "this" in input_date:
+                    input_date = day
+                elif "next" in input_date:
+                    this = parser.parse(day)
+                    output_date = this + relativedelta(weeks=+1)
+                    return output_date.strftime("%d %b")
+        
+        # Then we try to parse the date with dateutil parser,
+        # which is good at weekdays
+        try:
+            output_date = parser.parse(input_date)
+            return output_date.strftime("%d %b")
+        except parser.ParserError:
+            # If that fails, use dataparser, 
+            # which is good at everything else
+            dp_parser = DateDataParser(languages=['en'])
+            output_date = dp_parser.get_date_data(input_date).date_obj
+            if output_date is not None:
+                return output_date.strftime("%d %b")
+            else:
+                raise ValueError('Date inserted is invalid')
+    
+    def get_entities(self):
+        entities = []
+        if self.no_tickets != None: 
+            entities.append(self.no_tickets)
+        if self.date != None:
+            entities.append(self.date)
+        if self.exhibit != None:
+            entities.append(self.exhibit)
+        for interest in self.interests:
+            entities.append(interest)
+        return entities
+
+    def respond(self):
+        response = "Hello, I can help you by purchasing tickets, recommending exhibitions or providing general information about the museum."
+        error = True
+        self.complete = True
+        return response, error

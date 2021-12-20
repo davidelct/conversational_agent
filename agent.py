@@ -1,10 +1,10 @@
-import speech_recognition as sr
+#import speech_recognition as sr
 import pyttsx3
 from skills.tickets import PurchaseTickets
 from skills.interests import RecommendExhibit
-from skills.info import ProvideInfo
+#from skills.info import ProvideInfo
 from nlu_units.intent_classifier import IntentClassifier
-from nlu_units.ner import EntityExtractor
+from ner import EntityExtractor
 import sys
 
 TEXTUAL_INPUT = False
@@ -14,7 +14,7 @@ class Agent:
         self.past_intents = []
         self.current_intent = None
         self.current_intent_text = None
-        self.asr = sr.Recognizer()
+        #self.asr = sr.Recognizer()
         self.tts = self.configure_tts(rate=50)
         self.intent_classifier = IntentClassifier("models/model.sav", "models/tfidf1.pkl")
         self.ner = EntityExtractor("models/spacy_model/")
@@ -119,13 +119,14 @@ class Agent:
         
 
     def ask(self, question):
-        self.say(question)
-        with sr.Microphone() as source:
-            audio = self.asr.listen(source)
-            try:
-                response = self.asr.recognize_google(audio)
-            except sr.UnknownValueError:
-                response = self.ask("Sorry, I didn't catch that, could you repeat?")
+        self.output_file.write("<< " + question + "\n")
+        response = self.input("")
+        # with sr.Microphone() as source:
+        #     audio = self.asr.listen(source)
+        #     try:
+        #         response = self.asr.recognize_google(audio)
+        #     except sr.UnknownValueError:
+        #         response = self.ask("Sorry, I didn't catch that, could you repeat?")
         self.output_file.write(">> " + response + "\n")
         print(response)
         return response

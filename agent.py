@@ -2,6 +2,7 @@ import speech_recognition as sr
 import pyttsx3
 from skills.tickets import PurchaseTickets
 from skills.interests import RecommendExhibit
+from skills.info import ProvideInfo
 from nlu_units.intent_classifier import IntentClassifier
 from nlu_units.ner import EntityExtractor
 import sys

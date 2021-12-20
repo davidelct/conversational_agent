@@ -1,18 +1,13 @@
-import spacy
-from ner import parse
 from random import sample
-from utils import get_date
 import json
-from communication import ask,say
-from intent_classifier import get_intent
-
-nlp=spacy.load('en_core_web_sm')
+import spacy
   
-class GiveInformation:
+class ProvideInfo:
 
     def __init__(self):
         data_file = open("data/exhibits_data.json")
         self.data = json.load(data_file)
+        self.classifier = spacy.load("en_core_web....")
 
         self.exhibits = ['universe room', 
             'flooded forest', 
@@ -23,21 +18,13 @@ class GiveInformation:
         self.date = None
         self.exhibit = None
         self.query = None
-    
-    def new_sentence(self, sentence):
-        entities = parse(sentence)
-        self.fill_slots(entities)
 
-    def fill_slots(self, entities):
+    def add_entities(self, entities):
         for entity in entities:
             if entity.label_ == "DATE":
-                self.date = get_date(entity.text)
+                self.date = entity
             elif entity.label_ == "EXHIBIT":
-                self.exhibit = self.get_exhibit(entity.text)
-        if self.empty_slots():
-            self.fill_empty_slots()
-        else:
-            self.action()
+                self.exhibit = entity
 
     def get_exhibit(self, exhibit):
         if exhibit.lower() in self.exhibits:
@@ -46,11 +33,11 @@ class GiveInformation:
             say("Sorry, I don't know which exhibit you mean.")
             return None
 
-    def empty_slots(self):
+    def missing_info(self):
         return (self.date == None 
             or self.exhibit == None)
 
-    def request(self, parameter):
+    def prompt(self, parameter):
         prompts = {
             "date": ["When would you like to go?", "Which day?",
                 "For what day?"],
@@ -59,18 +46,11 @@ class GiveInformation:
         sentence = ask(sample(prompts[parameter], 1)[0])
         self.new_sentence(sentence)
 
-    def fill_empty_slots(self):
-        while self.empty_slots():
-            if self.date == None:
-                self.request("date")
-            if self.exhibit == None:
-                self.request("exhibit")
-
     def museum_open(self):
         return int(self.data[self.date]) >= 1
 
     def classify_question(self, question):
-        q = nlp(question)
+        q = self.classifier(question)
         questions = ["I want to know which exhibitions the museum has","Are there exhibitions for kids?","Is the museum open on date?",
                     "What is this exhibition about?", "Who worked on this exhibition?"]
         similarity_scores = []

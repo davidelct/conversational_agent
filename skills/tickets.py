@@ -107,7 +107,7 @@ class PurchaseTickets:
     def ticket_available(self):
         return int(self.data[self.get_date()]) >= int(self.get_number())
 
-    def respond(self, output_file):
+    def respond(self,output_file):
         if self.get_exhibit() in self.exhibits:
             if self.ticket_available():
                 response = str(self.get_number()) + " ticket"
@@ -124,7 +124,6 @@ class PurchaseTickets:
             response = "I'm sorry, we don't have an exhibition named " + self.get_exhibit()
             error = True
 
-        output_file.write(">> " + response + "\n")
         return response, error
 
     def action(self):

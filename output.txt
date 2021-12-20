@@ -1,0 +1,11 @@
+<< Hello, my name is Cosmo. How can I help you?
+>> tickets
+Matched to tickets intent
+Extracted entities: 
+<< How many tickets?
+>> can you recommend an exhibition
+Matched to interests intent
+Creating new intent interests
+Matched to interests intent
+Extracted entities: 
+<< What are you interested in?

@@ -1,49 +1,34 @@
-from ner import parse
 from random import sample
 import json
-from communication import ask,say
-from intent_classifier import get_intent
 
 class RecommendExhibit:
 
     def __init__(self):
-        data_file = open("../data/exhibits_data.json")
+        data_file = open("data/exhibits_data.json")
         self.data = json.load(data_file)
-
         self.interests = []
         self.matched_exhibits = []
-    
-    def new_sentence(self, sentence):
-        entities = parse(sentence)
-        self.fill_slots(entities)
+        self.empty_slots = self.missing_info()
+        self.complete = False
 
-    def fill_slots(self, entities):
+    def add_entities(self, entities):
         for entity in entities:
             if entity.label_ == "INTEREST":
-                self.interests.append(entity.text)
-        if self.empty_slots():
-            self.fill_empty_slots()
-        else:
-            self.action()
+                self.interests.append(entity)
 
-    def empty_slots(self):
+    def missing_info(self):
         return len(self.interests) == 0
 
-    def request(self):
+    def prompt(self):
         prompts = ["What are you interested in?", "What's your passion?", "What do you like?"]
-        sentence = ask(sample(prompts, 1)[0])
-        self.new_sentence(sentence)
-
-    def fill_empty_slots(self):
-        while self.empty_slots():
-            self.request()
+        return sample(prompts, 1)[0]
 
     def find_match(self):
         counters = {}
         for exhibit in self.data.keys():
             counter = 0
             for interest in self.interests:
-                if interest in self.data[exhibit]["interests"]:
+                if interest.text in self.data[exhibit]["interests"]:
                     counter += 1
             counters[exhibit] = counter
 
@@ -51,7 +36,6 @@ class RecommendExhibit:
         for exhibit,counter in counters.items():
             matches.append((exhibit,counter))
         matches.sort(key=lambda x:x[1],reverse=True)
-        print(matches)
         top_matches = []
         if matches[0][1] > 0:
             top_matches.append(matches[0][0])
@@ -59,33 +43,41 @@ class RecommendExhibit:
                 top_matches.append(matches[1][0])
         self.matched_exhibits = top_matches
 
-    def action(self):
+    def get_entities(self):
+        entities = []
+        for interest in self.interests:
+            entities.append(interest)
+        for match in self.matched_exhibits:
+            entities.append(match)
+        return entities
+
+    def respond(self, output_file):
         self.find_match()
-        print(self.matched_exhibits)
         if len(self.matched_exhibits):
-            sentence = "Awesome! Based on your interest in " + self.interests[0]
+            output_string = "Found following matches: "
+            for match in self.matched_exhibits:
+                output_string += str(match) + " "
+            output_file.write(output_string + "\n")
+            response = "Awesome! Based on your interest in " + self.interests[0].text
             if len(self.interests) > 1:
                 for interest in self.interests[1:-1]:
-                    sentence += ", " + interest
-                sentence += " and " + self.interests[-1]
-            sentence += " I think you should check out our " + self.matched_exhibits[0]
+                    response += ", " + interest.text
+                response += " and " + self.interests[-1].text
+            response += " I think you should check out our " + self.matched_exhibits[0]
             if len(self.matched_exhibits) > 1:
-                sentence += " and " + self.matched_exhibits[1] + " exhibitions. Would you like to hear more about them?"       
+                response += " and " + self.matched_exhibits[1] + " exhibitions. Would you like to hear more about them?"       
             else:
-                sentence += " exhibition. Would you like to hear more about it?"
-            response = ask(sentence)
-            if response == "yes":
-                self.describe_exhibits()
+                response += " exhibition. Would you like to hear more about it?"
+            error = False
         else:
-            sentence = "Sorry, it seems like we don't have anything matching your interests at the moment."
-            say(sentence)
-        
-    def describe_exhibits(self):
-        for exhibit in self.matched_exhibits:
-            say(self.data[exhibit]["description"])   
+            response = "Sorry, it seems like we don't have anything matching your interests at the moment."
+            error = True
+        output_file.write(">> " + response + "\n")
+        return response, error
 
-query = ask("Hello, my name is Cosmo. How can I help you?")
-intent = get_intent(query)
-if intent == "interests":
-    intent = RecommendExhibit()
-    intent.new_sentence(query)
+    def action(self):
+        response = []
+        for exhibit in self.matched_exhibits:
+            response.append(self.data[exhibit]["description"])
+        self.complete = True
+        return response

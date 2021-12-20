@@ -2,13 +2,17 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
 from utils import clean_text
 
-def get_intent(query):
-    model = pickle.load(open('models/model.sav', 'rb'))
-    tf1 = pickle.load(open("models/tfidf1.pkl", 'rb'))
-    tf1_new = TfidfVectorizer(vocabulary = tf1.vocabulary_)
-    classes = ["tix", "interests", "info", "fallback", "welcome"]
-    query = clean_text(query)
-    query = tf1_new.fit_transform([query])
-    pred = model.predict(query)
-    print(classes[pred[0]])
-    return classes[pred[0]]
+class IntentClassifier:
+
+    def __init__(self, classifier_path, vectorizer_path):
+        self.classifier = pickle.load(open(classifier_path, "rb"))
+        vectorizer = pickle.load(open(vectorizer_path, "rb"))
+        self.vectorizer = TfidfVectorizer(vocabulary = vectorizer.vocabulary_)
+
+    def classify_intent(self, sentence):
+        intents = ["tickets", "interests", "info", "fallback", "welcome", 
+            "slot filling"]
+        sentence = clean_text(sentence)
+        sentence = self.vectorizer.fit_transform([sentence])
+        prediction = self.classifier.predict(sentence)[0]
+        return intents[prediction]

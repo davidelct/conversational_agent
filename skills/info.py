@@ -85,18 +85,12 @@ class ProvideInfo:
             return None
 
     def missing_info(self):
-        result = None
-        for answer_id in self.answer_ids:
-            if self.query == self.answer_ids[answer_id]["question"]:
-                parameters = self.answer_ids[answer_id]["parameters"]
-                if parameters == "None":
-                    return False
-                if parameters == "EXHIBIT":
-                    self.parameters_needed == "EXHIBIT"
-                    return self.exhibit == None
-                if parameters == "DATE":
-                    self.parameters_needed == "DATE"
-                    return self.date == None
+        if self.parameters_needed == "None":
+            return False
+        if self.parameters_needed == "EXHIBIT":
+            return self.exhibit == None
+        if self.parameters_needed == "DATE":
+            return self.date == None
 
     def prompt(self, parameter):
         prompts = {
@@ -128,6 +122,7 @@ class ProvideInfo:
             similarity_scores.append(q.similarity(self.classifier(self.answer_ids[i+1]["question"])))
         max_index = similarity_scores.index(max(similarity_scores))
         self.query = self.answer_ids[max_index]
+        self.parameters_needed = self.answer_ids[max_index]["parameters"]
     
     def respond(self, output_file):
         if self.query == "Is the museum open on date?":

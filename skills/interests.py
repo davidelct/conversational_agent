@@ -50,7 +50,7 @@ class RecommendExhibit:
             entities.append(match)
         return entities
 
-    def respond(self, output_file):
+    def respond(self,output_file):
         self.find_match()
         if len(self.matched_exhibits):
             output_string = "Found following matches: "
@@ -71,7 +71,6 @@ class RecommendExhibit:
         else:
             response = "Sorry, it seems like we don't have anything matching your interests at the moment."
             error = True
-        output_file.write(">> " + response + "\n")
         return response, error
 
     def action(self):

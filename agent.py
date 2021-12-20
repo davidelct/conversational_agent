@@ -1,9 +1,5 @@
-from nltk import classify
 import speech_recognition as sr
 import pyttsx3
-import pickle
-import spacy
-from sklearn.feature_extraction.text import TfidfVectorizer
 from skills.tickets import PurchaseTickets
 from skills.interests import RecommendExhibit
 from nlu_units.intent_classifier import IntentClassifier
@@ -66,7 +62,7 @@ class Agent:
                 output_string = "Stored entities: "
                 for i in range(len(self.memory)):
                     if isinstance(self.memory[i], str):
-                        self.memory[i] = self.ner.parse(self.memory[i]) 
+                        self.memory[i] = self.ner.parse(self.memory[i])[0] 
                     output_string += str(self.memory[i]) + " "
                 output_string += "\n"
                 self.output_file.write(output_string)
@@ -88,16 +84,22 @@ class Agent:
                     self.say(response)
                 else:
                     confirm = self.ask(response)
-                    if confirm == "yes":
+                    while confirm != "proceed":
+                        confirm = self.ask("Please say proceed, stop or quit")
+                    if confirm.lower() == "proceed":
                         response = self.current_intent.action()
                         for r in response:
                             self.say(r)
-                self.continue_conversation()
+                        self.continue_conversation()
+                    elif confirm.lower() == "stop":
+                        self.continue_conversation()
+                    elif confirm.lower() == "quit":
+                        self.quit()
 
     def continue_conversation(self):
         response = self.ask("How can I help you?")
         if response.lower() == "quit":
-            self.stop()
+            self.quit()
         else:
             self.log_memory()
             self.start_new_intent(response)
@@ -105,7 +107,7 @@ class Agent:
     def log_memory(self):
         self.memory = self.current_intent.get_entities()
 
-    def stop(self):
+    def quit(self):
         sys.exit(0)
 
     def say(self, sentence):

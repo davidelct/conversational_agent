@@ -20,7 +20,6 @@ class PurchaseTickets:
         self.no_tickets = None
         self.date = None
         self.exhibit = None
-        self.empty_slots = self.missing_info()
 
     def add_entities(self, entities):
         for entity in entities:
@@ -125,6 +124,7 @@ class PurchaseTickets:
             response = "I'm sorry, we don't have an exhibition named " + self.get_exhibit()
             error = True
 
+        output_file.write(">> " + response + "\n")
         return response, error
 
     def action(self):
@@ -133,4 +133,5 @@ class PurchaseTickets:
             response.append("Ok, here are your " + str(self.get_number()) + " tickets")
         else:
             response.append("Ok, here is your ticket")
+        self.complete = True
         return response         

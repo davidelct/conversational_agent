@@ -3,6 +3,8 @@ import pyttsx3
 from skills.tickets import PurchaseTickets
 from skills.interests import RecommendExhibit
 from skills.info import ProvideInfo
+from skills.welcome import Welcome
+from skills.fallback import Fallback
 from nlu_units.intent_classifier import IntentClassifier
 from nlu_units.ner import EntityExtractor
 import sys
@@ -42,10 +44,10 @@ class Agent:
             new_intent = RecommendExhibit()
         elif intent == "info":
              new_intent = ProvideInfo()
-        # elif intent == "welcome":
-        #     new_intent = Welcome()
-        # else:
-        #     new_intent = Fallback()
+        elif intent == "welcome":
+             new_intent = Welcome()
+        else:
+            new_intent = Fallback()
 
         self.current_intent = new_intent
         self.current_intent_text = intent
@@ -54,6 +56,8 @@ class Agent:
 
     def solve_current_intent(self, sentence):
         intent = self.intent_classifier.classify_intent(sentence)
+        if intent == "info":
+            self.current_intent.classify_question(sentence)
         self.output_file.write("Matched to " + intent + " intent\n")
         if intent != self.current_intent_text and intent != "slot filling":
             self.log_memory()
@@ -84,12 +88,14 @@ class Agent:
                 response, error = self.current_intent.respond(self.output_file)
                 if error:
                     self.say(response)
+                    if intent == "welcome" or intent=="fallback":
+                        self.continue_conversation()
                 else:
                     confirm = self.ask(response)
                     while confirm != "proceed":
                         confirm = self.ask("Please say proceed, stop or quit")
                     if confirm.lower() == "proceed":
-                        response = self.current_intent.action()
+                        response = self.current_intent.action(self.output_file)
                         for r in response:
                             self.say(r)
                         self.continue_conversation()

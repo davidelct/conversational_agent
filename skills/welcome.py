@@ -86,7 +86,7 @@ class Welcome():
             entities.append(interest)
         return entities
 
-    def respond(self):
+    def respond(self,output_file):
         response = "Hello, I can help you by purchasing tickets, recommending exhibitions or providing general information about the museum."
         error = True
         self.complete = True

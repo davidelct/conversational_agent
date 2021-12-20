@@ -81,8 +81,8 @@ class Fallback:
             entities.append(self.exhibit)
         return entities
 
-    def respond(self):
-        response = "I'm sorry, I don't understand what you mean by that."
+    def respond(self,output_file):
+        response = "I'm sorry, I'm not sure that I can take care of that."
         error = True
         self.complete = True
         return response, error

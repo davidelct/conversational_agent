@@ -1,33 +1,6 @@
 << Hello, my name is Cosmo. How can I help you?
->> tickets
-Matched to tickets intent
-Extracted entities: 
-<< How many tickets would you like?
->> can you recommend an exhibition
-Matched to interests intent
-Creating new intent interests
-Matched to interests intent
-Extracted entities: 
-<< What are you interested in?
->> architecture
-Matched to slot filling intent
-Extracted entities: architecture 
-Found following matches: sustainable building 
->> Awesome! Based on your interest in architecture I think you should check out our sustainable building exhibition. Would you like to hear more about it?
+>> I wanted to let you know that I live in Germany
+Matched to fallback intent
+Extracted entities: germany 
+<< I'm sorry, I'm not sure that I can take care of that.
 << How can I help you?
->> tickets
-Matched to tickets intent
-Stored entities: architecture sustainable building 
-Extracted entities: 
-<< How many tickets do you need?
->> 3
-Matched to slot filling intent
-Stored entities: architecture sustainable building 
-Extracted entities: 3 
-<< For what day should I reserve your tickets?
->> tomorrow
-Matched to slot filling intent
-Stored entities: architecture sustainable building 
-Extracted entities: tomorrow 
->> 3 tickets on 21 Dec for sustainable building. That will be 18 euros. Would you like to proceed?
->> quit

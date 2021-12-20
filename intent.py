@@ -1,5 +1,5 @@
 from pickle import NONE
-from ner import parse
+from nlu_units.ner import parse
 from utils import get_date, check_date
 from random import sample
 from communication import say, ask

@@ -119,26 +119,27 @@ class ProvideInfo:
         q = self.classifier(question)
         similarity_scores = []
         for i in range(5):
-            similarity_scores.append(q.similarity(self.classifier(self.answer_ids[i+1]["question"])))
+            similarity_scores.append(q.similarity(self.classifier(self.answer_ids[str(i+1)]["question"])))
         max_index = similarity_scores.index(max(similarity_scores))
-        self.query = self.answer_ids[max_index]
-        self.parameters_needed = self.answer_ids[max_index]["parameters"]
+        self.query = self.answer_ids[str(max_index)]["question"]
+        self.parameters_needed = self.answer_ids[str(max_index)]["parameters"]
     
     def respond(self, output_file):
+        print(self.query)
         if self.query == "Is the museum open on date?":
-            response = "If I understand correctly, you want to know if the museum is open on " + str(self.get_date()) + "?"
+            response = "You want to know if the museum is open on " + str(self.get_date()) + ", right?"
             error = False
         if self.query == "What is this exhibition about?":
-            response = "If I understand correctly, you want to know what the " + str(self.get_exhibit()) + " exhibition is about?"
+            response = "You want to know what the " + str(self.get_exhibit()) + " exhibition is about, right?"
             error = False
         if self.query == "Who worked on this exhibition?":
-            response = "If I understand correctly, you want to know who worked on the " + str(self.get_exhibit()) + " exhibition?"
+            response = "You want to know who worked on the " + str(self.get_exhibit()) + " exhibition, right?"
             error = False
         if self.query == "Are there exhibitions for kids?":
-            response = "If I understand correctly, you want to know if the museum is suitable for kids?"
+            response = "You want to know if the museum is suitable for kids, right?"
             error = False
         if self.query == "I want to know which exhibitions the museum has":
-            response = "If I understand correctly, you want to know which exhibitions the museum has?"
+            response = "You want to know which exhibitions the museum has, right?"
             error = False
         return response, error
 

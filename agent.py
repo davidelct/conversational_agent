@@ -16,6 +16,7 @@ class Agent:
     def __init__(self):
         self.past_intents = []
         self.current_intent = None
+        self.current_intent_text = None
         self.asr = sr.Recognizer()
         self.tts = self.configure_tts(rate=50)
         self.intent_classifier = IntentClassifier("models/model.sav", "models/tfidf1.pkl")

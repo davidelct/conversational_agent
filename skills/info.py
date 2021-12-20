@@ -6,7 +6,7 @@ import json
 from communication import ask,say
 from intent_classifier import get_intent
 
-nlp=spacy.load('en_core_web_sm')
+nlp=spacy.load('en_core_web_lg')
   
 class GiveInformation:
 
@@ -95,12 +95,15 @@ intent = get_intent(question)
 if intent == "info":
     intent = GiveInformation()
     intent.classify_question(question)
+    print(intent.query)
     if intent.query == "Are there exhibitions for kids?":
         say("The museum is a beautiful place for all the members of the family to enjoy learning while playing")
         
     if intent.query == "I want to know which exhibitions the museum has":
         say("The museum has five permanent exhibitions: the flooded forest, the universe room, the antartic base, the geologic wall and the sustainable building")
-    else: intent.new_sentence(question)
+    else: 
+        print(question)
+        intent.new_sentence(question)
 
     ''' grounding:
         response = ask("If I understand correctly you want to know if there are exhibitions for kids?")

@@ -9,7 +9,7 @@ from word2number import w2n
 class PurchaseTickets:
 
     def __init__(self):
-        data_file = open("../data/tickets_data.json")
+        data_file = open("data/tickets_data.json")
         self.data = json.load(data_file)
 
         self.exhibits = ['universe room', 

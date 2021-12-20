@@ -5,8 +5,26 @@ I'd like to see the schedule
 I want to know which exhibitions the museum has
 What can I see at the CosmoCaixa museum
 What does the museum have now
+Which exhibitions do you have
+What exhibitions do you have
+Which exhibitions are on
+What exhibitions are on
+Which exhibitions are available
+What exhibitions are available
+Which exhibits do you have
+What exhibits do you have
+Which exhibits are on
+What exhibits are on
+Which exhibits are available
+What exhibits are available
 How many exhibitions does the CosmoCaixa have
 Is the CosmoCaixa museum for everyone
+Who created [EXHIBITION_NAME]
+Will kids like the museum
+Will kids like [EXHIBITION_NAME]
+Do you think kids like [EXHIBITION_NAME]
+What can I show my kids?
+Is [EXHIBITION_NAME] suitable for kids
 Are there exhibitions for kids
 What do you have [DATE2]
 Is the museum open [DATE2]
@@ -17,7 +35,6 @@ Who is the exhibition [EXHIBITION_NAME] by
 Who is the exhibition about [EXHIBITION_TOPIC] by
 Who worked on the [EXHIBITION_NAME] exhibition
 When does the [EXHIBITION_NAME] exhibit start
-When does the exhibit about [EXHIBITION_TOPIC] finish
 Which artists are you showing
 Tell me about the [EXHIBITION_NAME] exhibit 
 Can you tell me more about the [EXHIBITION_NAME] exhibition

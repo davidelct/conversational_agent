@@ -1,27 +1,16 @@
 I want to visit the museum
 Can you recommend me an exhibit
-What exhibits do you recommend
 I don't know what to choose
 Can you help me decide
-Which recommendations on exhibitions do you have for visiting the museum
-I like [EXHIBITION_TOPIC]
-I'm interested in [EXHIBITION_TOPIC]
+Recommendations on exhibitions for visiting the museum
 What do you have related to [EXHIBITION_TOPIC]
-I love [EXHIBITION_TOPIC]
-Show me exhibits about [EXHIBITION_TOPIC]
-Show me stuff on [EXHIBITION_TOPIC]
+Show me exhibitions about [EXHIBITION_TOPIC]
 Is there an exhibition about [EXHIBITION_TOPIC]
-I'd like to hear about [EXHIBITION_TOPIC]
-I'd like to learn about [EXHIBITION_TOPIC]
 I want to learn more about [EXHIBITION_TOPIC] which exhibition do you recommend
-I love [EXHIBITION_TOPIC] which exhibition should I go to
+I love [EXHIBITION_TOPIC] what exhibition should I go to
+I am interested in [EXHIBITION_TOPIC] what exhibition should I go to=
+I am interested in [EXHIBITION_TOPIC] what do you suggest
+I like [EXHIBITION_TOPIC] what do you have
+Suggest an exhibition
+Help me decide
 [EXHIBITION_TOPIC] is a passion of mine does any of the exhibitions in the Caixa museum cover this
-Would you advise me to go to [EXHIBITION_NAME]
-[EXHIBITION_TOPIC] fascinates me
-I think [EXHIBITION_TOPIC] is fascinating
-Discussing [EXHIBITION_TOPIC] is one of my favourite things to do
-I like to discuss [EXHIBITION_TOPIC]
-I love to think about [EXHIBITION_TOPIC]
-[EXHIBITION_TOPIC] is interesting
-It is so interesting how evolution created so many species
-It is so interesting to me how [EXHIBITION_TOPIC] works

@@ -4,11 +4,30 @@ from collections import OrderedDict
 from random import sample
 
 
-def augment(path_to_data, output_path, csv_output_path, label, sample_size=0, short=False):
-    numbers = ['two', 'three', 'four', 'five', 'six']
+def augment(path_to_data, csv_output_path, label, sample_size=0, short=False):
+    numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", 
+    "nine", "ten"]
 
-    interests = ['universe', 'space', 'cosmos', 'brain', 'big bang', 'evolution', 'science', 'life', 'physics', 'earth', 'sun', 'moon', 'mars', 'light', 'gravity', 'matter', 'planets', 'stars', 'nature', 'technology', 'floodings', 'forest', 'jungle', 'amazon', 'plants', 'water', 'ecosystem', 'biodiversity', 'brazil',
-                 'south america', 'animals', 'climate', 'climate change', 'rivers', 'temperature', 'national geographic', 'photos', 'ecology', 'organisms', 'environment', 'photographer', 'exploration', 'erosion', 'vulcanos', 'rock', 'rocks', 'landscape', 'earthquakes', 'sustainability', 'education', 'efficiency', 'building', 'architecture']
+    numbers += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    interests = ["universe", "space", "cosmos", "big bang", "evolution", "science", 
+        "life", "physics", "earth", "sun", "moon", "mars", "light", "gravity", 
+        "matter", "planet", "star", "technology","astronomy","exploration"]
+
+    interests += ["forest", "jungle", "amazon", "plant", "water", "biodiversity", 
+        "brazil", "south america", "animal", "climate", "climate change", "river", 
+        "evolution","nature"]
+
+    interests += ["artic", "south pole", "north pole", "photos", "ecology", 
+        "environment", "photography", "exploration","climate change","biodiversity",
+        "climate","nature"]
+
+    interests += ["nature", "volcano", "rock", "landscape", "earthquake", "evolution", 
+        "earth","geology","earth"]
+
+    interests += ["sustainability", "education", "efficiency", "architecture", 
+        "climate change", "urban planning", "design"]
 
     exhibit_names = ['universe room', 'flooded forest',
                      'antarctic base', 'geological wall', 'sustainable building']
@@ -134,11 +153,6 @@ def augment(path_to_data, output_path, csv_output_path, label, sample_size=0, sh
 
     dates_augmented_phrases = list(OrderedDict.fromkeys(dates_augmented_phrases))
 
-    f = open(output_path, 'w')
-    for phrase in dates_augmented_phrases:
-        f.write(phrase)
-        f.write('\n')
-
     with open(csv_output_path, "w") as f:
         f.write("phrase,class")
         f.write("\n")
@@ -147,10 +161,162 @@ def augment(path_to_data, output_path, csv_output_path, label, sample_size=0, sh
             f.write("\n")
 
 
-path_to_tix = 'data/tix.txt'
-path_to_info = 'data/info.txt'
-path_to_interests = 'data/interests.txt'
+def add_dummy_intent():
+    phrases = ["one", "two", "three", "four", "five", "six", "seven", "eight", 
+    "nine", "ten"]
 
-augment(path_to_tix, 'data/augmented/tix.txt','data/augmented/tix.csv', 0, sample_size = 4, short=True)
-augment(path_to_info, 'data/augmented/info.txt', 'data/augmented/info.csv',2, sample_size= 29, short=True)
-augment(path_to_interests, 'data/augmented/interests.txt', 'data/augmented/interests.csv', 1)
+    phrases += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    phrases += ["one", "two", "three", "four", "five", "six", "seven", "eight", 
+    "nine", "ten"]
+
+    phrases += ["one", "two", "three", "four", "five", "six", "seven", "eight", 
+    "nine", "ten"]
+
+    phrases += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    phrases += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    phrases += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    phrases += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    phrases += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    phrases += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    phrases += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    phrases += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    phrases += ["one", "two", "three", "four", "five", "six", "seven", "eight", 
+    "nine", "ten"]
+
+    phrases += ["1", "2", "3", "4", "5", "6", "7", "8", 
+        "9", "10"]
+
+    phrases += ["universe room", "flooded forest", "antarctic base", 
+        "geological wall", "sustainable building"]
+    
+    phrases += ["universe room", "flooded forest", "antarctic base", 
+        "geological wall", "sustainable building"]
+    
+    phrases += ["universe room", "flooded forest", "antarctic base", 
+        "geological wall", "sustainable building"]
+
+    phrases += ["universe room", "flooded forest", "antarctic base", 
+        "geological wall", "sustainable building"]
+    
+    phrases += ["universe room", "flooded forest", "antarctic base", 
+        "geological wall", "sustainable building"]
+
+    phrases += ["the universe room", "the flooded forest", "the antarctic base", 
+        "the geological wall", "the sustainable building"]
+
+    phrases += ["the universe room", "the flooded forest", "the antarctic base", 
+        "the geological wall", "the sustainable building"]
+
+    phrases += ["for the universe room", "for the flooded forest", "for the antarctic base", 
+        "for the geological wall", "for the sustainable building"]
+
+    phrases += ["to the universe room", "to the flooded forest", "to the antarctic base", 
+        "to the geological wall", "to the sustainable building"]
+
+    interests = ["universe", "space", "cosmos", "big bang", "evolution", "science", 
+        "life", "physics", "earth", "sun", "moon", "mars", "light", "gravity", 
+        "matter", "planet", "star", "technology","astronomy","exploration"]
+
+    interests += ["forest", "jungle", "amazon", "plant", "water", "biodiversity", 
+        "brazil", "south america", "animal", "climate", "climate change", "river", 
+            "evolution","nature"]
+
+    interests += ["artic", "south pole", "north pole", "photos", "ecology", 
+        "environment", "photography", "exploration","climate change","biodiversity",
+        "climate","nature"]
+
+    interests += ["nature", "volcano", "rock", "landscape", "earthquake", "evolution", 
+        "earth","geology","earth"]
+
+    interests += ["sustainability", "education", "efficiency", "architecture", 
+        "climate change", "urban planning", "design"]
+
+    phrases += interests
+    phrases += ["i like " + interest for interest in interests]
+    phrases += ["i like " + interest for interest in interests]
+    phrases += ["i like " + interest for interest in interests]
+    phrases += ["i'm interested in " + interest for interest in interests]
+    phrases += ["i love " + interest for interest in interests]
+    for _ in range(40):
+        two_interests = sample(interests,2)
+        string = two_interests[0] + " and " + two_interests[1]
+        phrases += [string] 
+
+    for _ in range(40):
+        two_interests = sample(interests,2)
+        string = "i like " + two_interests[0] + " and " + two_interests[1]
+        phrases += [string] 
+
+    for _ in range(40):
+        two_interests = sample(interests,2)
+        string = "i'm interested in " + two_interests[0] + " and " + two_interests[1]
+        phrases += [string]
+
+    for _ in range(40):
+        two_interests = sample(interests,2)
+        string = "i love " + two_interests[0] + " and " + two_interests[1]
+        phrases += [string]
+
+    today = date.today()
+    end_date = today + relativedelta(months=+12)
+    delta = end_date - today
+    dates = [(today + timedelta(days=i)) for i in range(delta.days + 1)]
+    db = sample(dates, 50)
+    bd = sample(dates, 50)
+    phrases += [day.strftime("%d %b") for day in db]
+    phrases += [day.strftime("%b %d") for day in bd]
+    phrases += ["today", "tomorrow"]
+    phrases += ["today", "tomorrow"]
+    phrases += ["today", "tomorrow"]
+    phrases += ["today", "tomorrow"]
+    phrases += ["on Monday", "on Tuesday", "on Wednesday", "on Thursday", 
+        "on Friday", "on Saturday", "on Sunday"]
+    phrases += ["this Monday", "this Tuesday", "this Wednesday", "this Thursday", 
+        "this Friday", "this Saturday", "this Sunday"]
+    phrases += ["next Monday", "next Tuesday", "next Wednesday", "next Thursday", 
+        "next Friday", "next Saturday", "next Sunday"]
+    phrases += ["this week", "next week","this weekend", "next weekend", 
+        "this month", "next month"]
+    phrases += ["on Monday", "on Tuesday", "on Wednesday", "on Thursday", 
+        "on Friday", "on Saturday", "on Sunday"]
+    phrases += ["this Monday", "this Tuesday", "this Wednesday", "this Thursday", 
+        "this Friday", "this Saturday", "this Sunday"]
+    phrases += ["next Monday", "next Tuesday", "next Wednesday", "next Thursday", 
+        "next Friday", "next Saturday", "next Sunday"]
+    phrases += ["this week", "next week","this weekend", "next weekend", 
+        "this month", "next month"]
+
+    f = open("augmented/slot_filling.csv", "w")
+    f.write("phrase,class")
+    f.write("\n")
+    for phrase in phrases:
+        string = phrase + "," + str(5)
+        f.write(string)
+        f.write('\n')
+
+path_to_tix = 'tix.txt'
+path_to_interests = 'interests.txt'
+path_to_info = 'info.txt'
+
+augment(path_to_tix,'augmented/tix.csv', 0, sample_size = 1, short=True)
+augment(path_to_interests,'augmented/interests.csv', 1)
+augment(path_to_info,'augmented/info.csv',2, sample_size= 29, short=True)
+add_dummy_intent()

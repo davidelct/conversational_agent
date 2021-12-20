@@ -3,10 +3,8 @@ import pyttsx3
 from skills.tickets import PurchaseTickets
 from skills.interests import RecommendExhibit
 from skills.info import ProvideInfo
-from skills.welcome import Welcome
-from skills.fallback import Fallback
 from nlu_units.intent_classifier import IntentClassifier
-from ner import EntityExtractor
+from nlu_units.ner import EntityExtractor
 import sys
 
 TEXTUAL_INPUT = False
@@ -42,12 +40,12 @@ class Agent:
             new_intent = PurchaseTickets()
         elif intent == "interests":
             new_intent = RecommendExhibit()
-        elif intent == "info":
-            new_intent = ProvideInfo()
-        elif intent == "welcome":
-            new_intent = Welcome()
-        else:
-            new_intent = Fallback()
+        # elif intent == "info":
+        #     new_intent = ProvideInfo()
+        # elif intent == "welcome":
+        #     new_intent = Welcome()
+        # else:
+        #     new_intent = Fallback()
 
         self.current_intent = new_intent
         self.current_intent_text = intent
@@ -58,6 +56,7 @@ class Agent:
         intent = self.intent_classifier.classify_intent(sentence)
         self.output_file.write("Matched to " + intent + " intent\n")
         if intent != self.current_intent_text and intent != "slot filling":
+            self.log_memory()
             self.output_file.write("Creating new intent " + intent + "\n")
             self.start_new_intent(sentence)
         else:
@@ -108,7 +107,7 @@ class Agent:
             self.start_new_intent(response)
     
     def log_memory(self):
-        self.memory = self.current_intent.get_entities()
+        self.memory += self.current_intent.get_entities()
 
     def quit(self):
         sys.exit(0)

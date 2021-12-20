@@ -40,8 +40,8 @@ class Agent:
             new_intent = PurchaseTickets()
         elif intent == "interests":
             new_intent = RecommendExhibit()
-        # elif intent == "info":
-        #     new_intent = ProvideInfo()
+        elif intent == "info":
+             new_intent = ProvideInfo()
         # elif intent == "welcome":
         #     new_intent = Welcome()
         # else:

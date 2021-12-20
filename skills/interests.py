@@ -8,7 +8,6 @@ class RecommendExhibit:
         self.data = json.load(data_file)
         self.interests = []
         self.matched_exhibits = []
-        self.empty_slots = self.missing_info()
         self.complete = False
 
     def add_entities(self, entities):

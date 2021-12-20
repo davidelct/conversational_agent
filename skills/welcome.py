@@ -70,7 +70,10 @@ class Welcome():
                 return output_date.strftime("%d %b")
             else:
                 raise ValueError('Date inserted is invalid')
-    
+                
+    def missing_info(self):
+        return False
+
     def get_entities(self):
         entities = []
         if self.no_tickets != None: 

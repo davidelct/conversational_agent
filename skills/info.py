@@ -38,6 +38,7 @@ class ProvideInfo:
                             "5": {"question": "Who worked on this exhibition?",
                                 "parameters": "EXHIBIT"}
                             }
+        self.parameters_needed = None
       
     def add_entities(self, entities):
         for entity in entities:
@@ -91,8 +92,10 @@ class ProvideInfo:
                 if parameters == "None":
                     return False
                 if parameters == "EXHIBIT":
+                    self.parameters_needed == "EXHIBIT"
                     return self.exhibit == None
                 if parameters == "DATE":
+                    self.parameters_needed == "DATE"
                     return self.date == None
 
     def prompt(self, parameter):
@@ -101,9 +104,9 @@ class ProvideInfo:
                 "For what day?"],
             "exhibit": ["Which exhibition would you like to know more about?", "For which exhibition?"]
         }
-        if self.date == None:
+        if self.parameters_needed == "DATE" and self.date == None:
             parameter = "date"
-        elif self.exhibit == None:
+        elif self.parameters_needed == "EXHIBIT" and self.exhibit == None:
             parameter = "exhibit"
         return sample(prompts[parameter], 1)[0]
 
